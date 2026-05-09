@@ -56,8 +56,8 @@ button{font-family:inherit;cursor:pointer}
 .logo-tagline{font-size:9.5px;font-weight:500;color:rgba(255,255,255,.4);letter-spacing:.3px;margin-top:3px}
 
 .nav-mid{display:flex;align-items:center;gap:32px}
-.nav-badge{display:flex;align-items:center;gap:7px;font-size:12.5px;font-weight:500;color:rgba(255,255,255,.7)}
-.nav-badge svg{width:16px;height:16px;stroke:rgba(255,255,255,.7);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.nav-badge{display:flex;align-items:center;gap:7px;font-size:12.5px;font-weight:500;color:rgba(255,255,255,.75)}
+.nav-badge svg{width:15px;height:15px;stroke:rgba(255,255,255,.75);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
 
 .nav-login{
   display:flex;align-items:center;gap:8px;
@@ -101,29 +101,31 @@ button{font-family:inherit;cursor:pointer}
 
 .hero-pill{
   display:inline-flex;align-items:center;
-  border:1.5px solid rgba(212,150,26,.45);
-  background:rgba(212,150,26,.07);
-  color:rgba(255,255,255,.88);
-  font-size:9px;font-weight:700;letter-spacing:1.8px;
-  padding:8px 18px;border-radius:100px;
-  width:fit-content;margin-bottom:28px;
+  border:1.5px solid rgba(212,150,26,.5);
+  background:rgba(212,150,26,.09);
+  color:rgba(255,255,255,.9);
+  font-size:9px;font-weight:700;letter-spacing:2px;
+  padding:8px 20px;border-radius:100px;
+  width:fit-content;margin-bottom:30px;
+  text-transform:uppercase;
 }
 .hero-h1{
-  font-size:54px;font-weight:900;
-  line-height:1.1;margin-bottom:22px;color:#fff;
+  font-size:52px;font-weight:900;
+  line-height:1.08;margin-bottom:24px;color:#fff;
+  letter-spacing:-.5px;
 }
 .hero-h1 .gold{color:var(--c-gold)}
 .hero-desc{
-  font-size:14px;font-weight:400;line-height:1.72;
-  color:rgba(255,255,255,.52);
-  max-width:420px;margin-bottom:38px;
+  font-size:14px;font-weight:400;line-height:1.75;
+  color:rgba(255,255,255,.55);
+  max-width:420px;margin-bottom:40px;
 }
 .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
 .btn-gold{
   display:inline-flex;align-items:center;gap:8px;
   background:var(--c-gold);color:#0B1628;
   font-size:14px;font-weight:700;
-  padding:14px 26px;border-radius:9px;border:none;cursor:pointer;
+  padding:15px 28px;border-radius:9px;border:none;cursor:pointer;
   transition:background .2s,transform .15s;
 }
 .btn-gold:hover{background:var(--c-gold2);transform:translateY(-1px)}
@@ -131,11 +133,11 @@ button{font-family:inherit;cursor:pointer}
   display:inline-flex;align-items:center;gap:8px;
   background:transparent;color:#fff;
   font-size:14px;font-weight:600;
-  padding:13px 26px;border-radius:9px;
-  border:2px solid rgba(255,255,255,.3);cursor:pointer;
+  padding:14px 28px;border-radius:9px;
+  border:2px solid rgba(255,255,255,.28);cursor:pointer;
   transition:border-color .2s;
 }
-.btn-ghost:hover{border-color:rgba(255,255,255,.65)}
+.btn-ghost:hover{border-color:rgba(255,255,255,.6)}
 
 /* Right — building photo */
 .hero-right{position:relative;overflow:hidden;z-index:2}
@@ -162,8 +164,8 @@ button{font-family:inherit;cursor:pointer}
     linear-gradient(rgba(120,170,255,.07) 1px,transparent 1px),
     linear-gradient(90deg,rgba(120,170,255,.07) 1px,transparent 1px);
   background-size:58px 58px,58px 58px,58px 58px;
-  mask-image:linear-gradient(90deg,rgba(0,0,0,.65) 0%,rgba(0,0,0,.2) 35%,transparent 60%);
   -webkit-mask-image:linear-gradient(90deg,rgba(0,0,0,.65) 0%,rgba(0,0,0,.2) 35%,transparent 60%);
+  mask-image:linear-gradient(90deg,rgba(0,0,0,.65) 0%,rgba(0,0,0,.2) 35%,transparent 60%);
 }
 
 /* Map pin labels */
@@ -192,17 +194,17 @@ button{font-family:inherit;cursor:pointer}
   display:flex;flex-direction:column;gap:8px;z-index:5;
 }
 .hsc{
-  background:rgba(5,12,28,.82);
+  background:rgba(5,12,28,.85);
   -webkit-backdrop-filter:blur(18px) saturate(1.5);
   backdrop-filter:blur(18px) saturate(1.5);
-  border:1px solid rgba(212,150,26,.22);
-  border-radius:10px;padding:11px 15px;
-  display:flex;align-items:center;gap:11px;min-width:208px;
+  border:1px solid rgba(212,150,26,.25);
+  border-radius:10px;padding:12px 16px;
+  display:flex;align-items:center;gap:12px;min-width:212px;
   cursor:pointer;animation:slideIn .5s ease both;
   box-shadow:0 4px 20px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.06);
   transition:background .2s,border-color .2s,box-shadow .2s;
 }
-.hsc:hover{background:rgba(12,24,52,.92);border-color:rgba(212,150,26,.5);box-shadow:0 6px 28px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.08)}
+.hsc:hover{background:rgba(12,24,52,.92);border-color:rgba(212,150,26,.55);box-shadow:0 6px 28px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.08)}
 .hsc:nth-child(1){animation-delay:.18s}
 .hsc:nth-child(2){animation-delay:.28s}
 .hsc:nth-child(3){animation-delay:.38s}
@@ -210,33 +212,33 @@ button{font-family:inherit;cursor:pointer}
 .hsc:nth-child(5){animation-delay:.58s}
 @keyframes slideIn{from{opacity:0;transform:translateX(24px)}to{opacity:1;transform:translateX(0)}}
 .hsc-ico{
-  width:34px;height:34px;border-radius:8px;
-  background:rgba(212,150,26,.14);
+  width:36px;height:36px;border-radius:8px;
+  background:rgba(212,150,26,.16);
   display:grid;place-items:center;flex-shrink:0;
 }
 .hsc-ico svg{width:18px;height:18px;stroke:var(--c-gold);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.hsc-label{font-size:12px;font-weight:700;color:rgba(255,255,255,.92);line-height:1.2}
-.hsc-count{font-size:10.5px;font-weight:500;color:rgba(212,150,26,.82);margin-top:2px}
+.hsc-label{font-size:12px;font-weight:700;color:rgba(255,255,255,.95);line-height:1.2}
+.hsc-count{font-size:10.5px;font-weight:500;color:rgba(212,150,26,.85);margin-top:2px}
 
 /* ═══ QUICK ACTIONS ═══ */
-.qa-wrap{background:#fff;padding:48px 48px 48px}
-.qa-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.qa-wrap{background:#fff;padding:52px 48px 56px}
+.qa-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .qa-card{
   border:1.5px solid #E8EAEF;border-radius:14px;
-  padding:26px 24px 22px;position:relative;overflow:hidden;
+  padding:28px 24px 24px;position:relative;overflow:hidden;
   transition:box-shadow .22s,transform .18s;cursor:pointer;background:#fff;
 }
-.qa-card:hover{box-shadow:0 10px 36px rgba(0,0,0,.1);transform:translateY(-3px)}
+.qa-card:hover{box-shadow:0 12px 40px rgba(0,0,0,.1);transform:translateY(-3px)}
 .qa-num{
   width:32px;height:32px;border-radius:8px;
   font-size:15px;font-weight:800;
-  display:grid;place-items:center;margin-bottom:14px;
+  display:grid;place-items:center;margin-bottom:16px;
 }
 .qa-num.dark{background:#0B1628;color:var(--c-gold)}
 .qa-num.gold{background:var(--c-gold);color:#0B1628}
 .qa-icon{
   position:absolute;right:20px;top:22px;
-  width:64px;height:64px;border-radius:50%;
+  width:66px;height:66px;border-radius:50%;
   display:grid;place-items:center;
 }
 .qa-icon.dark{background:#0B1628}
@@ -244,31 +246,33 @@ button{font-family:inherit;cursor:pointer}
 .qa-icon.gold{background:var(--c-gold)}
 .qa-icon.gold svg{stroke:#0B1628;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 .qa-icon svg{width:28px;height:28px}
-.qa-card h3{font-size:17px;font-weight:700;color:#0D1733;margin-bottom:10px;line-height:1.25}
-.qa-card p{font-size:13px;color:#6B7491;line-height:1.65;margin-bottom:20px}
+.qa-card h3{font-size:17px;font-weight:700;color:#0D1733;margin-bottom:10px;line-height:1.25;padding-right:72px}
+.qa-card p{font-size:13px;color:#6B7491;line-height:1.68;margin-bottom:22px}
 .qa-btn{
   display:inline-flex;align-items:center;gap:7px;
   font-size:12.5px;font-weight:700;
-  padding:10px 18px;border-radius:8px;border:none;cursor:pointer;
+  padding:11px 20px;border-radius:8px;border:none;cursor:pointer;
   transition:opacity .2s,transform .15s;
 }
 .qa-btn.dark{background:#0B1628;color:#fff}
 .qa-btn.gold{background:var(--c-gold);color:#0B1628}
-.qa-btn:hover{opacity:.86;transform:translateY(-1px)}
+.qa-btn:hover{opacity:.88;transform:translateY(-1px)}
 
 /* ═══ STATS BAR ═══ */
 .stats-bar{
   background:#F2F4F8;border-top:1px solid #DDE1EB;
-  padding:22px 52px;
+  padding:24px 52px;
   display:flex;align-items:center;justify-content:space-between;
   gap:16px;flex-wrap:wrap;
 }
-.stat{display:flex;align-items:center;gap:11px}
-.stat-ico{width:36px;height:36px;display:grid;place-items:center;flex-shrink:0}
-.stat-ico svg{width:28px;height:28px;stroke:#0D1733;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;opacity:.62}
+.stat{display:flex;align-items:center;gap:12px}
+.stat-ico{width:38px;height:38px;display:grid;place-items:center;flex-shrink:0}
+.stat-ico svg{width:28px;height:28px;stroke:#0D1733;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;opacity:.7}
 .stat-num{font-size:20px;font-weight:800;color:#0D1733;line-height:1}
 .stat-lbl{font-size:11px;font-weight:500;color:#6B7491;margin-top:3px}
 .stat-cta{display:flex;align-items:center;gap:14px;margin-left:auto}
+.stat-cta-ico{width:38px;height:38px;display:grid;place-items:center;flex-shrink:0}
+.stat-cta-ico svg{width:28px;height:28px;stroke:#0D1733;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;opacity:.7}
 .stat-cta-copy strong{font-size:14.5px;font-weight:700;color:#0D1733;display:block;line-height:1.2}
 .stat-cta-copy span{font-size:11.5px;color:#6B7491}
 .btn-dark{
@@ -279,6 +283,9 @@ button{font-family:inherit;cursor:pointer}
   transition:background .2s;
 }
 .btn-dark:hover{background:#5548D9}
+
+.biz-bar-outer{padding:0 52px 80px;background:#fff}
+.biz-bar-outer .biz-bar{border:1px solid #EEF0F5;border-radius:16px;background:#fff;overflow:hidden}
 
 /* animation & responsive — consolidated at end of stylesheet */
 .sec-tag{
@@ -304,17 +311,16 @@ button{font-family:inherit;cursor:pointer}
 }
 
 /*══════════════════════════════════════════════
-/*══════════════════════════════════════════════
   5. SECTION 2 — PRECISION MAP  (exact screenshot)
 ══════════════════════════════════════════════*/
-.s2{background:#fff;padding:72px 52px 0}
-.s2-inner{display:grid;grid-template-columns:390px 1fr;gap:52px;align-items:start}
+.s2{background:#fff;padding:80px 52px 0}
+.s2-inner{display:grid;grid-template-columns:400px 1fr;gap:56px;align-items:stretch}
 
 /* Left panel */
 .s2-divider{height:1px;background:#E8EAEF;margin:22px 0 28px}
-.feat-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:28px 20px;margin-bottom:32px}
+.feat-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:28px 20px;margin-bottom:36px}
 .feat-item{display:flex;flex-direction:column;gap:0}
-.feat-ico-wrap{width:48px;height:48px;border-radius:50%;background:rgba(85,72,217,.08);display:grid;place-items:center;margin-bottom:12px}
+.feat-ico-wrap{width:48px;height:48px;border-radius:12px;background:rgba(85,72,217,.08);display:grid;place-items:center;margin-bottom:14px}
 .feat-ico-wrap svg{width:22px;height:22px;stroke:var(--c-purple);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .feat-name{font-size:13.5px;font-weight:700;color:var(--c-t1);margin-bottom:5px}
 .feat-desc{font-size:12px;font-weight:400;color:var(--c-t3);line-height:1.55}
@@ -324,14 +330,15 @@ button{font-family:inherit;cursor:pointer}
 .btn-purple:hover{background:var(--c-purple2)}
 
 /* Map Widget container */
-.map-widget{border-radius:16px;overflow:hidden;border:1px solid #E4E6EF;box-shadow:0 8px 40px rgba(0,0,0,.1);background:#fff}
+.map-widget{border-radius:16px;overflow:hidden;border:1px solid #E4E6EF;box-shadow:0 8px 40px rgba(0,0,0,.1);background:#fff;display:flex;flex-direction:column;height:100%}
 
 /* Search bar */
-.mw-search{display:flex;align-items:center;justify-content:space-between;padding:13px 18px;background:#fff;border-bottom:1px solid #EEF0F5;gap:12px}
-.mw-search-l{display:flex;align-items:center;gap:10px;flex:1}
-.gmaps-ico{width:22px;height:22px;flex-shrink:0}
-.mw-search-l p{font-size:13.5px;font-weight:400;color:#9BA3B5}
-.mw-drop{display:flex;align-items:center;gap:5px;color:var(--c-purple);font-size:13px;font-weight:700;cursor:pointer;white-space:nowrap}
+.mw-search{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:#fff;border-bottom:1px solid #EEF0F5;gap:14px;min-height:62px}
+.mw-search-l{display:flex;align-items:center;gap:10px;flex:1;min-width:0}
+.gmaps-ico{width:26px;height:26px;flex-shrink:0}
+.mw-search-l p{font-size:14px;font-weight:400;color:#9BA3B5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mw-drop{display:flex;align-items:center;gap:6px;color:var(--c-purple);font-size:13.5px;font-weight:700;cursor:pointer;white-space:nowrap;border:1.5px solid var(--c-purple);border-radius:100px;padding:8px 16px;transition:background .15s}
+.mw-drop:hover{background:rgba(85,72,217,.06)}
 .mw-drop svg{width:15px;height:15px;stroke:var(--c-purple);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 
 /* Radius bar */
@@ -340,10 +347,10 @@ button{font-family:inherit;cursor:pointer}
 .rad{padding:6px 14px;border-radius:100px;font-size:12.5px;font-weight:600;border:none;cursor:pointer;background:transparent;color:#6B7491;transition:all .15s;white-space:nowrap;font-family:inherit}
 .rad.on{background:var(--c-purple);color:#fff}
 .rad:not(.on):hover{background:#EEF0F5}
-.mw-sel{margin-left:6px;padding:6px 28px 6px 12px;border-radius:100px;border:1.5px solid #E4E6EF;font-size:12.5px;font-weight:600;color:#3A4566;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%236B7491' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat right 10px center;-webkit-appearance:none;font-family:inherit;cursor:pointer}
+.mw-sel{margin-left:6px;padding:6px 28px 6px 12px;border-radius:100px;border:1.5px solid #E4E6EF;font-size:12.5px;font-weight:600;color:#3A4566;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%236B7491' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat right 10px center;-webkit-appearance:none;appearance:none;font-family:inherit;cursor:pointer}
 
 /* Map body row */
-.mw-body{display:flex;position:relative;height:370px;overflow:hidden}
+.mw-body{display:flex;position:relative;flex:1;min-height:340px;overflow:hidden}
 
 /* Google Maps-style canvas */
 .mw-canvas{flex:1;position:relative;overflow:hidden;background:#EBE3D5}
@@ -377,11 +384,14 @@ button{font-family:inherit;cursor:pointer}
 .mz-log {width:160px;height:140px;top:40%;left:-2%;background:rgba(22,163,74,.14)}
 .mz-biz {width:230px;height:200px;bottom:-4%;left:15%;background:rgba(70,60,200,.13)}
 .mz-foot{width:175px;height:155px;bottom:5%;right:20%;background:rgba(219,39,119,.14)}
-.mz-center{width:190px;height:160px;top:50%;left:42%;transform:translate(-50%,-50%);background:rgba(100,140,220,.08);border:2px dashed rgba(85,72,217,.4);z-index:2}
+.mz-center{width:200px;height:200px;top:50%;left:42%;transform:translate(-50%,-50%);background:rgba(85,72,217,.06);border:2px dashed rgba(85,72,217,.35);border-radius:50%;z-index:2}
 
 /* Red center pin */
-.rad-dot{position:absolute;top:50%;left:42%;transform:translate(-50%,-50%);z-index:6}
-.rd-inner{width:22px;height:22px;background:#EF4444;border-radius:50% 50% 50% 0;transform:rotate(-45deg);box-shadow:0 3px 12px rgba(239,68,68,.55);border:2.5px solid #fff}
+@keyframes loc-pulse{0%{transform:translate(-50%,-50%) scale(1);opacity:.5}100%{transform:translate(-50%,-50%) scale(2.4);opacity:0}}
+.rad-dot{position:absolute;top:50%;left:42%;transform:translate(-50%,-50%);z-index:6;display:grid;place-items:center}
+.rad-dot::before,.rad-dot::after{content:'';position:absolute;top:50%;left:50%;width:36px;height:36px;border-radius:50%;background:rgba(85,72,217,.25);animation:loc-pulse 2s ease-out infinite}
+.rad-dot::after{animation-delay:.8s}
+.rd-inner{width:16px;height:16px;background:#5548D9;border-radius:50%;border:3px solid #fff;box-shadow:0 2px 10px rgba(85,72,217,.6);position:relative;z-index:1}
 .rad-lbl{position:absolute;top:53%;left:44%;background:rgba(0,0,0,.75);color:#fff;font-size:10px;font-weight:700;padding:4px 9px;border-radius:6px;white-space:nowrap;z-index:5;box-shadow:0 2px 8px rgba(0,0,0,.3)}
 
 /* Cluster badges — with icon + name + count */
@@ -397,7 +407,7 @@ button{font-family:inherit;cursor:pointer}
 .cl-biz {background:#4B3FD8;bottom:7%;left:18%}
 .cl-foot{background:#DB2777;bottom:13%;right:21%}
 
-/* Scattered property icons */
+/* Scattered property icon positions */
 .mico{position:absolute;z-index:4;width:30px;height:30px;border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:0 2px 8px rgba(0,0,0,.18);cursor:pointer;transition:transform .15s}
 .mico:hover{transform:scale(1.2)}
 .mico svg{width:15px;height:15px;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;fill:none}
@@ -406,6 +416,10 @@ button{font-family:inherit;cursor:pointer}
 .mico.gr{background:#16A34A}.mico.gr svg{stroke:#fff}
 .mico.pk{background:#DB2777}.mico.pk svg{stroke:#fff}
 .mico.wh svg{stroke:#5548D9}
+.mi1{top:30%;left:34%}.mi2{top:22%;left:48%}.mi3{top:30%;right:34%}
+.mi4{top:32%;left:64%}.mi5{top:48%;left:46%}.mi6{top:50%;left:60%}
+.mi7{top:46%;right:18%}.mi8{top:62%;left:30%}.mi9{top:64%;right:24%}
+.mi10{top:64%;left:46%}.mi11{bottom:14%;left:50%}
 
 /* Map controls */
 .mw-ctrls{display:flex;flex-direction:column;gap:6px;padding:10px 8px;background:#fff;border-left:1px solid #EEF0F5;z-index:6;flex-shrink:0}
@@ -423,7 +437,11 @@ button{font-family:inherit;cursor:pointer}
 .ms-list{flex:1;overflow-y:auto}
 .ms-row{display:flex;align-items:center;gap:10px;padding:10px 14px;border-bottom:1px solid #F5F7FA;cursor:pointer;transition:background .15s}
 .ms-row:hover{background:#F8F9FB}
-.ms-thumb{width:52px;height:42px;border-radius:8px;flex-shrink:0;overflow:hidden;background-size:cover !important;background-position:center !important}
+.ms-thumb{width:52px;height:42px;border-radius:8px;flex-shrink:0;overflow:hidden;background-size:cover;background-position:center}
+.ms-thumb.t1{background-image:url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=120&q=80&fit=crop')}
+.ms-thumb.t2{background-image:url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=120&q=80&fit=crop')}
+.ms-thumb.t3{background-image:url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=120&q=80&fit=crop')}
+.ms-thumb.t4{background-image:url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=120&q=80&fit=crop')}
 .ms-info{flex:1;min-width:0}
 .ms-name{font-size:11px;font-weight:700;color:#0D1733;line-height:1.3;margin-bottom:3px}
 .ms-city{font-size:10px;color:#6B7491;margin-bottom:2px}
@@ -434,20 +452,20 @@ button{font-family:inherit;cursor:pointer}
 .ms-foot a{font-size:11.5px;font-weight:700;color:var(--c-purple);display:flex;align-items:center;gap:5px}
 
 /* Bottom biz bar */
-.biz-bar{background:#fff;border-top:1px solid #EEF0F5;padding:20px 24px;display:flex;align-items:flex-start;gap:0}
-.bb-title{flex-shrink:0;padding-right:28px;border-right:1px solid #EEF0F5;margin-right:28px;min-width:148px}
-.bb-title h4{font-size:16px;font-weight:800;color:#0D1733;line-height:1.3;margin-bottom:8px}
+.biz-bar{background:#fff;border-top:1px solid #EEF0F5;padding:26px 28px;display:flex;align-items:flex-start;gap:0}
+.bb-title{flex-shrink:0;padding-right:28px;border-right:1px solid #EEF0F5;margin-right:32px;min-width:148px}
+.bb-title h4{font-size:17px;font-weight:800;color:#0D1733;line-height:1.3;margin-bottom:8px}
 .bb-title-line{width:36px;height:3px;background:#D4961A;border-radius:2px;margin-bottom:8px}
 .bb-title p{font-size:11.5px;color:#6B7491;line-height:1.5}
-.bb-items{display:flex;gap:24px;flex-wrap:wrap;flex:1;align-items:flex-start}
-.bb-item{display:flex;align-items:flex-start;gap:10px;flex-shrink:0}
-.bb-ico{width:34px;height:34px;display:grid;place-items:center;flex-shrink:0}
+.bb-items{display:flex;gap:28px;flex-wrap:wrap;flex:1;align-items:flex-start}
+.bb-item{display:flex;align-items:flex-start;gap:12px;flex-shrink:0}
+.bb-ico{width:36px;height:36px;display:grid;place-items:center;flex-shrink:0;border-radius:8px;}
 .bb-ico svg{width:22px;height:22px;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .bb-ico.green svg{stroke:#16A34A}
 .bb-ico.indigo svg{stroke:#5548D9}
 .bb-ico.amber svg{stroke:#D97706}
-.bbn{font-size:12.5px;font-weight:700;color:#0D1733;margin-bottom:3px;line-height:1.2}
-.bbd{font-size:11px;color:#6B7491;line-height:1.45}
+.bbn{font-size:13px;font-weight:700;color:#0D1733;margin-bottom:4px;line-height:1.25}
+.bbd{font-size:11px;color:#6B7491;line-height:1.5}
 /*══════════════════════════════════════════════
   6. SECTION 3 — ONE BUILDING  (pixel-perfect)
 ══════════════════════════════════════════════*/
@@ -999,8 +1017,8 @@ button{font-family:inherit;cursor:pointer}
   .navbar{padding:0 20px}
   .nav-mid{display:none}
   .hero-left{padding:42px 24px}
-  .hero-h1{font-size:36px}
-  .qa-wrap{padding:36px 20px 0}
+  .hero-h1{font-size:34px;letter-spacing:-.2px}
+  .qa-wrap{padding:36px 20px 40px}
   .qa-grid{grid-template-columns:1fr}
   .stats-bar{padding:18px 20px;flex-wrap:wrap;gap:14px}
   .s2,.s3,.s4{padding:56px 20px}
@@ -1081,19 +1099,19 @@ button{font-family:inherit;cursor:pointer}
 
     <!-- Floating map pins -->
     <div class="map-pin hmp1">
-      <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><path d="M32 4C20.4 4 11 13.4 11 25c0 15.8 21 35 21 35s21-19.2 21-35C53 13.4 43.6 4 32 4zm0 30a9 9 0 1 1 0-18 9 9 0 0 1 0 18z" fill="#D49619"/></svg>
       Office Spaces
     </div>
     <div class="map-pin hmp2">
-      <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><path d="M32 4C20.4 4 11 13.4 11 25c0 15.8 21 35 21 35s21-19.2 21-35C53 13.4 43.6 4 32 4zm0 30a9 9 0 1 1 0-18 9 9 0 0 1 0 18z" fill="#D49619"/></svg>
       Retail Spaces
     </div>
     <div class="map-pin hmp3">
-      <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+     <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><path d="M32 4C20.4 4 11 13.4 11 25c0 15.8 21 35 21 35s21-19.2 21-35C53 13.4 43.6 4 32 4zm0 30a9 9 0 1 1 0-18 9 9 0 0 1 0 18z" fill="#E0B35A"/></svg>
       Franchise Opportunities
     </div>
     <div class="map-pin hmp4">
-      <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+     <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><path d="M32 4C20.4 4 11 13.4 11 25c0 15.8 21 35 21 35s21-19.2 21-35C53 13.4 43.6 4 32 4zm0 30a9 9 0 1 1 0-18 9 9 0 0 1 0 18z" fill="#E0B35A"/></svg>
       Businesses for Sale
     </div>
 
@@ -1108,7 +1126,7 @@ button{font-family:inherit;cursor:pointer}
         <div><div class="hsc-label">Shops for Sale</div><div class="hsc-count">12 Units</div></div>
       </div>
       <div class="hsc">
-        <div class="hsc-ico"><svg viewBox="0 0 24 24"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11M12 2a10 10 0 100 20A10 10 0 0012 2z" stroke-width="1.6"/></svg></div>
+        <div class="hsc-ico"><svg viewBox="0 0 24 24"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg></div>
         <div><div class="hsc-label">Franchise Opportunities</div><div class="hsc-count">08 Available</div></div>
       </div>
       <div class="hsc">
@@ -1128,7 +1146,7 @@ button{font-family:inherit;cursor:pointer}
   <div class="qa-grid">
 
     <div class="qa-card">
-      <div class="qa-icon dark"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+      <div class="qa-icon dark"><svg viewBox="0 0 24 24"><path d="M6 22V4a2 2 0 012-2h8a2 2 0 012 2v18Z"/><path d="M6 12H4a2 2 0 00-2 2v6a2 2 0 002 2h2"/><path d="M18 9h2a2 2 0 012 2v9a2 2 0 01-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg></div>
       <div class="qa-num dark">1</div>
       <h3>Buy Property</h3>
       <p>Discover premium commercial properties for your business or investment.</p>
@@ -1144,7 +1162,7 @@ button{font-family:inherit;cursor:pointer}
     </div>
 
     <div class="qa-card">
-      <div class="qa-icon dark"><svg viewBox="0 0 24 24"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8M16 6l-4-4-4 4M12 2v13"/></svg></div>
+      <div class="qa-icon dark"><svg viewBox="0 0 24 24"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg></div>
       <div class="qa-num dark">3</div>
       <h3>Franchise Opportunities</h3>
       <p>Explore profitable franchise opportunities across top brands and locations.</p>
@@ -1160,7 +1178,7 @@ button{font-family:inherit;cursor:pointer}
     </div>
 
     <div class="qa-card">
-      <div class="qa-icon dark"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+      <div class="qa-icon dark"><svg viewBox="0 0 24 24"><path d="M15 21v-8a1 1 0 00-1-1h-4a1 1 0 00-1 1v8"/><path d="M3 10a2 2 0 01.709-1.528l7-5.999a2 2 0 012.582 0l7 5.999A2 2 0 0121 10v9a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg></div>
       <div class="qa-num dark">5</div>
       <h3>Lease Property</h3>
       <p>Find the perfect commercial space for lease for your business.</p>
@@ -1168,7 +1186,7 @@ button{font-family:inherit;cursor:pointer}
     </div>
 
     <div class="qa-card">
-      <div class="qa-icon gold"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg></div>
+      <div class="qa-icon gold"><svg viewBox="0 0 24 24"><path d="m2 7 4.41-4.41A2 2 0 017.83 2h8.34a2 2 0 011.42.59L22 7"/><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8"/><path d="M15 22v-4a2 2 0 00-2-2h-2a2 2 0 00-2 2v4"/><path d="M2 7h20"/><path d="M22 7v3a2 2 0 01-2 2c-.69 0-1.31-.29-1.76-.76a.5.5 0 00-.71 0A2.49 2.49 0 0116 12a2.49 2.49 0 01-1.76-.76.5.5 0 00-.71 0A2.49 2.49 0 0112 12a2.49 2.49 0 01-1.76-.76.5.5 0 00-.71 0A2.49 2.49 0 018 12a2.49 2.49 0 01-1.76-.76.5.5 0 00-.71 0A2.49 2.49 0 014 12a2 2 0 01-2-2V7"/></svg></div>
       <div class="qa-num gold">6</div>
       <h3>Existing Businesses</h3>
       <p>Buy or lease existing businesses and take over a profitable operation.</p>
@@ -1181,7 +1199,7 @@ button{font-family:inherit;cursor:pointer}
 <!-- ═══ STATS BAR ═══ -->
 <div class="stats-bar">
   <div class="stat">
-    <div class="stat-ico"><svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg></div>
+    <div class="stat-ico"><svg viewBox="0 0 24 24"><path d="M6 22V4a2 2 0 012-2h8a2 2 0 012 2v18Z"/><path d="M6 12H4a2 2 0 00-2 2v6a2 2 0 002 2h2"/><path d="M18 9h2a2 2 0 012 2v9a2 2 0 01-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg></div>
     <div><div class="stat-num">12,000+</div><div class="stat-lbl">Active Listings</div></div>
   </div>
   <div class="stat">
@@ -1189,21 +1207,19 @@ button{font-family:inherit;cursor:pointer}
     <div><div class="stat-num">8,500+</div><div class="stat-lbl">Verified Brokers</div></div>
   </div>
   <div class="stat">
-    <div class="stat-ico"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
+    <div class="stat-ico"><svg viewBox="0 0 24 24"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg></div>
     <div><div class="stat-num">2,500+</div><div class="stat-lbl">Franchise Partners</div></div>
   </div>
   <div class="stat">
-    <div class="stat-ico"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div>
+    <div class="stat-ico"><svg viewBox="0 0 24 24"><path d="m2 7 4.41-4.41A2 2 0 017.83 2h8.34a2 2 0 011.42.59L22 7"/><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8"/><path d="M15 22v-4a2 2 0 00-2-2h-2a2 2 0 00-2 2v4"/><path d="M2 7h20"/></svg></div>
     <div><div class="stat-num">1,800+</div><div class="stat-lbl">Businesses Available</div></div>
   </div>
   <div class="stat-cta">
-    <div class="stat-ico" style="margin-right:4px"><svg viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0118 0v6"/><path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"/></svg></div>
+    <div class="stat-cta-ico"><svg viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0118 0v6"/><path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"/></svg></div>
     <div class="stat-cta-copy"><strong>Need Help?</strong><span>Talk to our real estate experts</span></div>
     <a class="btn-dark" href="#">Contact Us &nbsp;→</a>
   </div>
 </div>
-<!-- ═══════════════════════════════════════════════
-
 <!-- ═══════════════════════════════════════════════
      SECTION 2  —  PRECISION MAP SEARCH
 ═══════════════════════════════════════════════ -->
@@ -1235,7 +1251,7 @@ button{font-family:inherit;cursor:pointer}
         </div>
         <div class="feat-item">
           <div class="feat-ico-wrap">
-            <svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M6 22V4a2 2 0 012-2h8a2 2 0 012 2v18Z"/><path d="M6 12H4a2 2 0 00-2 2v6a2 2 0 002 2h2"/><path d="M18 9h2a2 2 0 012 2v9a2 2 0 01-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/></svg>
           </div>
           <div class="feat-name">Building Level</div>
           <div class="feat-desc">Explore every option<br>inside a building</div>
@@ -1264,7 +1280,7 @@ button{font-family:inherit;cursor:pointer}
       </div>
 
       <button class="btn-purple">
-        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+       <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><path d="M32 4C20.4 4 11 13.4 11 25c0 15.8 21 35 21 35s21-19.2 21-35C53 13.4 43.6 4 32 4zm0 30a9 9 0 1 1 0-18 9 9 0 0 1 0 18z" fill="#E0B35A"/></svg>
         Explore Commercial Clusters &nbsp;→
       </button>
     </div>
@@ -1302,7 +1318,7 @@ button{font-family:inherit;cursor:pointer}
         <button class="rad on">2 km</button>
         <button class="rad">5 km</button>
         <button class="rad">10 km</button>
-        <select class="mw-sel"><option>All Opportunities</option></select>
+        <select class="mw-sel" title="Filter opportunity type"><option>All Opportunities</option></select>
       </div>
 
       <!-- Map body -->
@@ -1330,7 +1346,7 @@ button{font-family:inherit;cursor:pointer}
 
           <!-- Cluster badges -->
           <div class="cluster cl-it">
-            <div class="cluster-ico"><svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg></div>
+            <div class="cluster-ico"><svg viewBox="0 0 24 24"><path d="M6 22V4a2 2 0 012-2h8a2 2 0 012 2v18Z"/><path d="M6 12H4a2 2 0 00-2 2v6a2 2 0 002 2h2"/><path d="M18 9h2a2 2 0 012 2v9a2 2 0 01-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/></svg></div>
             <div><div class="cl-name">IT Corridor</div><div class="cl-cnt">128 Opportunities</div></div>
           </div>
 
@@ -1345,7 +1361,7 @@ button{font-family:inherit;cursor:pointer}
           </div>
 
           <div class="cluster cl-biz">
-            <div class="cluster-ico"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+            <div class="cluster-ico"><svg viewBox="0 0 24 24"><path d="M6 22V4a2 2 0 012-2h8a2 2 0 012 2v18Z"/><path d="M6 12H4a2 2 0 00-2 2v6a2 2 0 002 2h2"/><path d="M18 9h2a2 2 0 012 2v9a2 2 0 01-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/></svg></div>
             <div><div class="cl-name">Business District</div><div class="cl-cnt">156 Opportunities</div></div>
           </div>
 
@@ -1355,17 +1371,17 @@ button{font-family:inherit;cursor:pointer}
           </div>
 
           <!-- Scattered icons across map -->
-          <div class="mico pu" style="top:30%;left:34%"><svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/></svg></div>
-          <div class="mico pu" style="top:22%;left:48%"><svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/></svg></div>
-          <div class="mico am" style="top:30%;right:34%"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14h18V6l-3-4z"/></svg></div>
-          <div class="mico gr" style="top:32%;left:64%"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="14" rx="1"/></svg></div>
-          <div class="mico gr" style="top:48%;left:46%"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="14" rx="1"/></svg></div>
-          <div class="mico pu" style="top:50%;left:60%"><svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/></svg></div>
-          <div class="mico am" style="top:46%;right:18%"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14h18V6l-3-4z"/></svg></div>
-          <div class="mico pk" style="top:62%;left:30%"><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="3"/><path d="M5 21v-2a4 4 0 014-4h6a4 4 0 014 4v2"/></svg></div>
-          <div class="mico pk" style="top:64%;right:24%"><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="3"/><path d="M5 21v-2a4 4 0 014-4h6a4 4 0 014 4v2"/></svg></div>
-          <div class="mico pu" style="top:64%;left:46%"><svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/></svg></div>
-          <div class="mico gr" style="bottom:14%;left:50%"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="14" rx="1"/></svg></div>
+          <div class="mico pu mi1"><svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/></svg></div>
+          <div class="mico pu mi2"><svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/></svg></div>
+          <div class="mico am mi3"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14h18V6l-3-4z"/></svg></div>
+          <div class="mico gr mi4"><svg viewBox="0 0 24 24"><path d="M6 22V4a2 2 0 012-2h8a2 2 0 012 2v18Z"/><path d="M10 14h4"/></svg></div>
+          <div class="mico gr mi5"><svg viewBox="0 0 24 24"><path d="M6 22V4a2 2 0 012-2h8a2 2 0 012 2v18Z"/><path d="M10 14h4"/></svg></div>
+          <div class="mico pu mi6"><svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/></svg></div>
+          <div class="mico am mi7"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14h18V6l-3-4z"/></svg></div>
+          <div class="mico pk mi8"><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="3"/><path d="M5 21v-2a4 4 0 014-4h6a4 4 0 014 4v2"/></svg></div>
+          <div class="mico pk mi9"><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="3"/><path d="M5 21v-2a4 4 0 014-4h6a4 4 0 014 4v2"/></svg></div>
+          <div class="mico pu mi10"><svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/></svg></div>
+          <div class="mico gr mi11"><svg viewBox="0 0 24 24"><path d="M6 22V4a2 2 0 012-2h8a2 2 0 012 2v18Z"/><path d="M10 14h4"/></svg></div>
         </div>
 
         <!-- Right map controls -->
@@ -1391,7 +1407,7 @@ button{font-family:inherit;cursor:pointer}
           </div>
           <div class="ms-list">
             <div class="ms-row">
-              <div class="ms-thumb" style="background:url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=120&q=80&fit=crop') center/cover"></div>
+              <div class="ms-thumb t1"></div>
               <div class="ms-info">
                 <div class="ms-name">Grade A Office Space</div>
                 <div class="ms-city">Hitech City, Hyderabad</div>
@@ -1400,7 +1416,7 @@ button{font-family:inherit;cursor:pointer}
               <div class="ms-bk"><svg viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg></div>
             </div>
             <div class="ms-row">
-              <div class="ms-thumb" style="background:url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=120&q=80&fit=crop') center/cover"></div>
+              <div class="ms-thumb t2"></div>
               <div class="ms-info">
                 <div class="ms-name">Retail Shop for Lease</div>
                 <div class="ms-city">Madhapur, Hyderabad</div>
@@ -1409,7 +1425,7 @@ button{font-family:inherit;cursor:pointer}
               <div class="ms-bk"><svg viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg></div>
             </div>
             <div class="ms-row">
-              <div class="ms-thumb" style="background:url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=120&q=80&fit=crop') center/cover"></div>
+              <div class="ms-thumb t3"></div>
               <div class="ms-info">
                 <div class="ms-name">Franchise Opportunity</div>
                 <div class="ms-city">Banjara Hills, Hyderabad</div>
@@ -1418,7 +1434,7 @@ button{font-family:inherit;cursor:pointer}
               <div class="ms-bk"><svg viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg></div>
             </div>
             <div class="ms-row">
-              <div class="ms-thumb" style="background:url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=120&q=80&fit=crop') center/cover"></div>
+              <div class="ms-thumb t4"></div>
               <div class="ms-info">
                 <div class="ms-name">Warehouse Space</div>
                 <div class="ms-city">Kothaguda, Hyderabad</div>
@@ -1438,8 +1454,8 @@ button{font-family:inherit;cursor:pointer}
 </section>
 
 <!-- Built for Business Expansion -->
-<div class="biz-bar-outer" style="padding:0 52px 80px;background:#fff">
-  <div class="biz-bar" style="border:1px solid #EEF0F5;border-radius:16px;background:#fff">
+<div class="biz-bar-outer">
+  <div class="biz-bar">
     <div class="bb-title">
       <h4>Built for Business<br>Expansion</h4>
       <div class="bb-title-line"></div>
@@ -1447,7 +1463,7 @@ button{font-family:inherit;cursor:pointer}
     </div>
     <div class="bb-items">
       <div class="bb-item">
-        <div class="bb-ico indigo"><svg viewBox="0 0 24 24"><path d="M3 2l1 7c0 1 1 2 2 2v11M3 2c0 4 0 8 1 9M11 2v9M9 2l2 9M11 11v11M14 2v9c0 1 0 1 1 1h2c1 0 1 0 1-1V2M16 12v10"/></svg></div>
+        <div class="bb-ico indigo"><svg viewBox="0 0 24 24"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 00-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg></div>
         <div><div class="bbn">Restaurant<br>Chains</div><div class="bbd">Find high-footfall<br>retail clusters</div></div>
       </div>
       <div class="bb-item">
@@ -1455,7 +1471,7 @@ button{font-family:inherit;cursor:pointer}
         <div><div class="bbn">Logistics<br>Companies</div><div class="bbd">Locate warehouses<br>near corridors</div></div>
       </div>
       <div class="bb-item">
-        <div class="bb-ico indigo"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg></div>
+        <div class="bb-ico indigo"><svg viewBox="0 0 24 24"><path d="M6 22V4a2 2 0 012-2h8a2 2 0 012 2v18Z"/><path d="M6 12H4a2 2 0 00-2 2v6a2 2 0 002 2h2"/><path d="M18 9h2a2 2 0 012 2v9a2 2 0 01-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/></svg></div>
         <div><div class="bbn">IT / Tech<br>Companies</div><div class="bbd">Find offices near<br>talent hubs</div></div>
       </div>
       <div class="bb-item">
@@ -1510,7 +1526,7 @@ button{font-family:inherit;cursor:pointer}
 
       <!-- Address pill -->
       <div class="bldg-addr">
-        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+       <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><path d="M32 4C20.4 4 11 13.4 11 25c0 15.8 21 35 21 35s21-19.2 21-35C53 13.4 43.6 4 32 4zm0 30a9 9 0 1 1 0-18 9 9 0 0 1 0 18z" fill="#E0B35A"/></svg>
         Max Towers, Sector 62, Noida
       </div>
 
