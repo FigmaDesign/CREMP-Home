@@ -1729,40 +1729,65 @@
 
     .s3-left-tags {
       position: absolute;
-      top: 100px;
-      left: 30px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
+      top: 0;
+      left: 36px;
+      bottom: 0;
+      width: 165px;
       z-index: 10;
     }
 
     .floor-tag {
       background: #fff;
-      border-radius: 12px;
-      padding: 10px 14px;
+      border-radius: 10px;
+      padding: 7px 10px;
       display: flex;
       align-items: center;
-      gap: 12px;
-      width: 190px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-      position: relative;
+      gap: 8px;
+      width: 165px;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+      position: absolute;
+      left: 0;
+      transform: translateY(-50%);
       border: 1px solid #F0F2F5;
       cursor: pointer;
       transition: transform 0.2s;
     }
 
     .floor-tag:hover {
-      transform: translateX(4px);
+      transform: translateY(-50%) translateX(3px);
+    }
+
+    .floor-tag.t-purple {
+      top: calc(15% + 20px);
+    }
+
+    .floor-tag.t-green {
+      top: calc(28% + 30px);
+    }
+
+    .floor-tag.t-orange {
+      top: calc(41% + 30px);
+    }
+
+    .floor-tag.t-blue {
+      top: calc(54% + 30px);
+    }
+
+    .floor-tag.t-amber {
+      top: calc(68% + 30px);
+    }
+
+    .floor-tag.t-violet {
+      top: calc(82% + 30px);
     }
 
     .s3-line {
       position: absolute;
-      left: 100%;
+      left: calc(100% + 4px);
       top: 50%;
       transform: translateY(-50%);
-      width: 60px;
-      border-bottom: 2px dotted;
+      width: 65px;
+      border-bottom: 2px dashed;
       opacity: 0.6;
       z-index: 1;
     }
@@ -1772,8 +1797,8 @@
       position: absolute;
       right: -3px;
       top: -3px;
-      width: 6px;
-      height: 6px;
+      width: 7px;
+      height: 7px;
       border-radius: 50%;
       background: currentColor;
     }
@@ -1833,17 +1858,17 @@
     }
 
     .ftag-ico {
-      width: 36px;
-      height: 36px;
-      border-radius: 8px;
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
       display: grid;
       place-items: center;
       flex-shrink: 0;
     }
 
     .ftag-ico svg {
-      width: 18px;
-      height: 18px;
+      width: 14px;
+      height: 14px;
       stroke: #fff;
       fill: none;
       stroke-width: 2;
@@ -1854,18 +1879,18 @@
     .ftag-text {
       display: flex;
       flex-direction: column;
-      gap: 2px;
+      gap: 1px;
     }
 
     .ftag-name {
-      font-size: 12px;
+      font-size: 10.5px;
       font-weight: 700;
       color: #0D1733;
       line-height: 1.2;
     }
 
     .ftag-cnt {
-      font-size: 10px;
+      font-size: 9px;
       color: #6B7491;
     }
 
@@ -1875,53 +1900,55 @@
       inset: 0;
       pointer-events: none;
       z-index: 5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .bldg-lbl {
       position: absolute;
       left: 50%;
-      transform: translateX(-50%);
-      padding: 6px 12px;
+      transform: translateX(-50%) translateY(-50%);
+      padding: 5px 10px;
       border-radius: 4px;
       color: #fff;
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 800;
       letter-spacing: 0.5px;
       text-transform: uppercase;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
       white-space: nowrap;
       z-index: 6;
-      transition: transform 0.2s;
     }
 
     .bl-purple {
       background: #5548D9;
-      top: 12%;
+      top: 15%;
     }
 
     .bl-green {
       background: #16A34A;
-      top: 25%;
+      top: calc(28% + 20px);
     }
 
     .bl-orange {
       background: #F27052;
-      top: 38%;
+      top: calc(41% + 20px);
     }
 
     .bl-blue {
       background: #2563EB;
-      top: 51%;
+      top: 54%;
     }
 
     .bl-amber {
       background: #E8AA22;
-      top: 64%;
+      top: 68%;
     }
 
     .bl-violet {
       background: #8B5CF6;
-      top: 77%;
+      top: 82%;
     }
 
 
@@ -4014,7 +4041,8 @@
         </div>
 
         <button class="btn-purple">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
             <circle cx="12" cy="10" r="3"></circle>
           </svg>
@@ -4421,7 +4449,7 @@
               <div class="ftag-name">Retail Spaces</div>
               <div class="ftag-cnt">18 Available</div>
             </div>
-            <div class="s3-line" style="width: 80px;"></div>
+            <div class="s3-line"></div>
           </div>
           <div class="floor-tag t-orange">
             <div class="ftag-ico"><svg viewBox="0 0 24 24">
@@ -4433,7 +4461,7 @@
               <div class="ftag-name">F&amp;B / Restaurants</div>
               <div class="ftag-cnt">07 Available</div>
             </div>
-            <div class="s3-line" style="width: 100px;"></div>
+            <div class="s3-line"></div>
           </div>
           <div class="floor-tag t-blue">
             <div class="ftag-ico"><svg viewBox="0 0 24 24">
@@ -4444,7 +4472,7 @@
               <div class="ftag-name">Businesses</div>
               <div class="ftag-cnt">12 Available</div>
             </div>
-            <div class="s3-line" style="width: 110px;"></div>
+            <div class="s3-line"></div>
           </div>
           <div class="floor-tag t-amber">
             <div class="ftag-ico"><svg viewBox="0 0 24 24">
@@ -4454,7 +4482,7 @@
               <div class="ftag-name">Franchise Opp.</div>
               <div class="ftag-cnt">06 Available</div>
             </div>
-            <div class="s3-line" style="width: 120px;"></div>
+            <div class="s3-line"></div>
           </div>
           <div class="floor-tag t-violet">
             <div class="ftag-ico"><svg viewBox="0 0 24 24">
@@ -4465,7 +4493,7 @@
               <div class="ftag-name">Brokers in Building</div>
               <div class="ftag-cnt">05 Available</div>
             </div>
-            <div class="s3-line" style="width: 110px;"></div>
+            <div class="s3-line"></div>
           </div>
         </div>
 
