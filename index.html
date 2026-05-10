@@ -76,7 +76,6 @@ button{font-family:inherit;cursor:pointer}
   display:grid;grid-template-columns:45fr 55fr;
   position:relative;overflow:hidden;
 }
-/* Subtle dot-grid texture on left panel */
 .hero::before{
   content:'';position:absolute;left:0;top:0;width:55%;height:100%;
   background-image:radial-gradient(circle,rgba(212,150,26,.12) 1px,transparent 1px);
@@ -85,13 +84,11 @@ button{font-family:inherit;cursor:pointer}
   -webkit-mask-image:linear-gradient(90deg,rgba(0,0,0,.7) 0%,transparent 90%);
   mask-image:linear-gradient(90deg,rgba(0,0,0,.7) 0%,transparent 90%);
 }
-/* Left text area */
 .hero-left{
   padding:72px 36px 62px 52px;
   display:flex;flex-direction:column;justify-content:center;
   z-index:3;position:relative;
 }
-/* Blend edge into right photo */
 .hero-left::after{
   content:'';
   position:absolute;right:-80px;top:0;bottom:0;width:140px;
@@ -139,24 +136,20 @@ button{font-family:inherit;cursor:pointer}
 }
 .btn-ghost:hover{border-color:rgba(255,255,255,.6)}
 
-/* Right — building photo */
 .hero-right{position:relative;overflow:hidden;z-index:2}
 
 .hero-map-bg{
   position:absolute;inset:0;
   background:url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1400&q=90&fit=crop') center 30% / cover no-repeat;
 }
-/* Left edge dark blend — stronger to merge text area */
 .hero-map-bg::before{
   content:'';position:absolute;inset:0;
   background:linear-gradient(90deg,#0B1628 0%,rgba(11,22,40,.72) 22%,rgba(11,22,40,.28) 48%,rgba(11,22,40,.08) 68%,transparent 100%);
 }
-/* Subtle top/bottom vignette + slight overall darkening for card legibility */
 .hero-map-bg::after{
   content:'';position:absolute;inset:0;
   background:linear-gradient(180deg,rgba(7,14,28,.55) 0%,rgba(7,14,28,.15) 20%,transparent 60%,rgba(5,10,20,.55) 100%);
 }
-/* Map network grid overlay */
 .hero-building{
   position:absolute;inset:0;z-index:2;pointer-events:none;
   background-image:
@@ -168,7 +161,6 @@ button{font-family:inherit;cursor:pointer}
   mask-image:linear-gradient(90deg,rgba(0,0,0,.65) 0%,rgba(0,0,0,.2) 35%,transparent 60%);
 }
 
-/* Map pin labels */
 .map-pin{
   position:absolute;z-index:4;
   display:inline-flex;align-items:center;gap:6px;
@@ -188,7 +180,6 @@ button{font-family:inherit;cursor:pointer}
 .hmp4{top:70%;left:30%;animation-delay:1.65s}
 @keyframes pinBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
 
-/* Side glassmorphism cards */
 .hero-sidecards{
   position:absolute;right:16px;top:50%;transform:translateY(-50%);
   display:flex;flex-direction:column;gap:8px;z-index:5;
@@ -284,10 +275,8 @@ button{font-family:inherit;cursor:pointer}
 }
 .btn-dark:hover{background:#5548D9}
 
-.biz-bar-outer{padding:0 60px 52px;background:#F8FAFC}
-.biz-bar-outer .biz-bar{border:1px solid #E2E8F0;border-radius:20px;background:#fff;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.05)}
 
-/* animation & responsive — consolidated at end of stylesheet */
+
 .sec-tag{
   display:flex;align-items:center;gap:8px;
   font-size:10px;font-weight:700;letter-spacing:2px;
@@ -314,324 +303,523 @@ button{font-family:inherit;cursor:pointer}
   max-width:440px;
 }
 
-/*══════════════════════════════════════════════
-  5. SECTION 2 — PRECISION MAP  (exact screenshot)
-══════════════════════════════════════════════*/
-.s2{background:#F8FAFC;padding:56px 60px 0}
-.s2-inner{display:grid;grid-template-columns:420px 1fr;gap:48px;align-items:stretch}
+/* ═══ SECTION 2 — PRECISION MAP SEARCH ═══ */
+.s2 {
+  background: #fff;
+  padding: 60px 60px 0;
+}
+.s2-inner {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 40px;
+  align-items: stretch;
+}
+
+/* Left Panel */
+.s2-left {
+  padding-top: 10px;
+}
+.sec-tag {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #D4961A;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+.sec-tag::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #D4961A;
+}
+.sec-h2 {
+  font-size: 38px;
+  font-weight: 800;
+  line-height: 1.15;
+  color: #0B1628;
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+}
+.sec-h2 .purple {
+  color: #5548D9;
+}
+.sec-p {
+  font-size: 14.5px;
+  color: #6B7491;
+  line-height: 1.6;
+  margin-bottom: 36px;
+  max-width: 95%;
+}
+
+/* 2-Column Features Grid */
+.feat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px 24px;
+  margin-bottom: 40px;
+}
+.feat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.feat-ico-wrap {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #F4F3FD;
+  display: grid;
+  place-items: center;
+  margin-bottom: 12px;
+}
+.feat-ico-wrap svg {
+  width: 20px;
+  height: 20px;
+  stroke: #5548D9;
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.feat-name {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #0D1733;
+  margin-bottom: 6px;
+}
+.feat-desc {
+  font-size: 12px;
+  color: #6B7491;
+  line-height: 1.5;
+}
+
+.btn-purple {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #5548D9;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 14px 26px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.15s;
+  box-shadow: 0 4px 14px rgba(85,72,217,.3);
+}
+.btn-purple svg {
+  width: 16px;
+  height: 16px;
+  stroke: #fff;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.btn-purple:hover { opacity: 0.9; transform: translateY(-1px); }
+
+/* Right Panel - Map Widget */
+.map-widget {
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid #E8EAEF;
+  box-shadow: 0 16px 40px rgba(0,0,0,.05);
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+}
+
+/* Map Header/Search */
+.mw-search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  background: #fff;
+  border-bottom: 1px solid #F1F3F7;
+  min-height: 64px;
+}
+.mw-search-l {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.gmaps-ico { width: 24px; height: 24px; flex-shrink: 0; }
+.mw-search-l p { font-size: 13.5px; color: #6B7491; }
+.mw-drop {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #5548D9;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid #E2E0FB;
+  border-radius: 100px;
+  padding: 8px 16px;
+  background: #fff;
+  transition: background 0.2s;
+}
+.mw-drop:hover { background: #F4F3FD; }
+.mw-drop svg { width: 14px; height: 14px; stroke: #5548D9; fill: none; stroke-width: 2; }
+
+/* Radius Filter Bar */
+.mw-radius {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 12px 24px;
+  background: #fff;
+  border-bottom: 1px solid #F1F3F7;
+}
+.mw-rlbl { font-size: 12px; font-weight: 500; color: #6B7491; margin-right: 12px; }
+.rad {
+  padding: 6px 14px;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  background: #F4F5F7;
+  color: #3A4566;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+.rad.on { background: #5548D9; color: #fff; }
+.rad:not(.on):hover { background: #E8EAEF; }
+.mw-sel {
+  margin-left: 12px;
+  padding: 6px 28px 6px 14px;
+  border-radius: 100px;
+  border: 1px solid #E8EAEF;
+  font-size: 12px;
+  font-weight: 600;
+  color: #3A4566;
+  background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%236B7491' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat right 12px center;
+  appearance: none;
+  cursor: pointer;
+}
+
+/* Map Body Canvas */
+.mw-body {
+  position: relative;
+  flex: 1;
+  min-height: 520px;
+  overflow: hidden;
+}
+.mw-canvas {
+  position: absolute;
+  inset: 0;
+  background: #F3F5F9;
+  background-image: 
+    linear-gradient(rgba(255,255,255,1) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(255,255,255,1) 2px, transparent 2px);
+  background-size: 40px 40px;
+}
+
+/* Faint Concentric Radius Rings */
+.map-radius-ring {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1.5px dashed rgba(85,72,217,0.25);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+}
+.map-radius-ring.r1 { width: 180px; height: 180px; background: rgba(85,72,217,0.03); }
+.map-radius-ring.r2 { width: 340px; height: 340px; }
+
+/* Zone overlays */
+.map-zone { position: absolute; border-radius: 50%; filter: blur(25px); pointer-events: none; z-index: 2; opacity: 0.4; }
+.mz-it   { width: 150px; height: 150px; top: 15%; left: 10%; background: #5548D9; }
+.mz-ret  { width: 140px; height: 140px; top: 20%; right: 20%; background: #D4961A; }
+.mz-log  { width: 120px; height: 120px; bottom: 30%; left: 15%; background: #16A34A; }
+.mz-biz  { width: 160px; height: 160px; bottom: 20%; left: 40%; background: #3B82F6; }
+.mz-foot { width: 130px; height: 130px; bottom: 25%; right: 15%; background: #DB2777; }
+
+/* Center Red Pin */
+.rad-dot { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -100%); z-index: 6; }
+.rd-pin { width: 30px; height: 42px; filter: drop-shadow(0 4px 8px rgba(234,67,53,.4)); }
+.rad-lbl {
+  position: absolute; top: 51%; left: 50%; transform: translateX(-50%);
+  background: #0D1733; color: #fff; font-size: 11px; font-weight: 600;
+  padding: 5px 12px; border-radius: 100px; white-space: nowrap; z-index: 5;
+}
+
+/* Cluster Badges */
+.cluster {
+  position: absolute; z-index: 5;
+  display: flex; align-items: center; gap: 10px;
+  padding: 6px 14px 6px 6px; border-radius: 100px;
+  color: #fff; box-shadow: 0 4px 14px rgba(0,0,0,.15);
+  cursor: pointer; transition: transform 0.2s; white-space: nowrap;
+}
+.cluster:hover { transform: translateY(-2px); }
+.cluster-ico {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: rgba(255,255,255,.2); display: grid; place-items: center;
+}
+.cluster-ico svg { width: 14px; height: 14px; stroke: #fff; fill: none; stroke-width: 2; }
+.cl-name { font-size: 11.5px; font-weight: 700; line-height: 1.1; }
+.cl-cnt { font-size: 9px; font-weight: 500; opacity: 0.9; margin-top: 2px; }
+
+.cl-it  { background: #6655EE; top: 18%; left: 8%; }
+.cl-ret { background: #E8AA22; top: 22%; right: 18%; }
+.cl-log { background: #16A34A; top: 55%; left: 8%; }
+.cl-biz { background: #2563EB; bottom: 20%; left: 35%; }
+.cl-foot{ background: #DB2777; bottom: 25%; right: 10%; }
+
+/* Scattered Small Circular Icons */
+.mico {
+  position: absolute; z-index: 4; width: 24px; height: 24px;
+  border-radius: 50%; display: grid; place-items: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,.15); border: 2px solid #fff;
+}
+.mico svg { width: 12px; height: 12px; stroke: #fff; fill: none; stroke-width: 2; }
+.mico.pu { background: #5548D9; }
+.mico.am { background: #D4961A; }
+.mico.gr { background: #16A34A; }
+.mico.pk { background: #DB2777; }
+
+.mi1  { top: 25%; left: 30%; }
+.mi3  { top: 15%; right: 35%; }
+.mi4  { top: 40%; left: 20%; }
+.mi8  { bottom: 35%; right: 28%; }
+.mi10 { bottom: 40%; left: 25%; }
+
+/* Floating Controls (Top Right) */
+.mw-ctrls-floating {
+  position: absolute; top: 16px; right: 16px; z-index: 10;
+  display: flex; flex-direction: column; gap: 6px;
+}
+.mc {
+  width: 40px; height: 40px; border-radius: 8px; background: #fff;
+  border: 1px solid #E8EAEF; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 2px;
+  cursor: pointer; box-shadow: 0 2px 10px rgba(0,0,0,.05);
+  font-size: 8.5px; font-weight: 600; color: #3A4566;
+}
+.mc svg { width: 16px; height: 16px; stroke: #3A4566; fill: none; stroke-width: 1.8; }
+.mc-plus, .mc-minus { font-size: 20px; font-weight: 400; line-height: 1; }
+.mc-sep { height: 1px; background: transparent; margin: 2px 0; }
+
+/* Overlay Nearby Card (Bottom Right) */
+.mw-overlay-card {
+  position: absolute;
+  bottom: 16px; right: 16px;
+  width: 280px; background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,.12);
+  z-index: 10;
+  display: flex; flex-direction: column;
+}
+.ms-hdr {
+  padding: 14px 16px; display: flex; justify-content: space-between; align-items: center;
+  border-bottom: 1px solid #F1F3F7;
+}
+.ms-hdr-t { font-size: 13px; font-weight: 700; color: #0D1733; }
+.ms-hdr a { font-size: 11.5px; color: #5548D9; font-weight: 600; }
+.ms-list { max-height: 280px; overflow-y: auto; }
+.ms-row {
+  display: flex; align-items: center; gap: 12px;
+  padding: 10px 16px; border-bottom: 1px solid #F8FAFC;
+  cursor: pointer; transition: background 0.2s;
+}
+.ms-row:hover { background: #F8FAFC; }
+.ms-thumb {
+  width: 48px; height: 38px; border-radius: 6px; flex-shrink: 0;
+  background-size: cover; background-position: center;
+}
+.ms-info { flex: 1; min-width: 0; }
+.ms-name { font-size: 11.5px; font-weight: 700; color: #0D1733; line-height: 1.2; margin-bottom: 3px; }
+.ms-city { font-size: 10px; color: #6B7491; margin-bottom: 3px; }
+.ms-dist { display: flex; align-items: center; gap: 4px; font-size: 10px; color: #6B7491; }
+.ms-dist svg { width: 10px; height: 10px; fill: #6B7491; }
+.ms-bk svg { width: 14px; height: 14px; stroke: #C0C5D2; fill: none; stroke-width: 2; }
+.ms-foot { padding: 12px 16px; text-align: center; }
+.ms-foot a { font-size: 12px; font-weight: 600; color: #5548D9; display: flex; align-items: center; justify-content: center; gap: 6px; }
+
+/* ═══ Built for Business Expansion Bar ═══ */
+.biz-bar-outer {
+  padding: 24px 60px 50px;
+  background: #fff;
+}
+.biz-bar {
+  background: #F8FAFC;
+  border-radius: 16px;
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.bb-title { flex-shrink: 0; }
+.bb-title h4 { font-size: 16px; font-weight: 800; color: #0B1628; line-height: 1.3; margin-bottom: 4px; }
+.bb-title p { font-size: 12px; color: #6B7491; line-height: 1.4; }
+.bb-divider { width: 1px; height: 48px; background: #E2E6EE; flex-shrink: 0; }
+
+.bb-items {
+  display: flex; align-items: center; justify-content: space-between; flex: 1;
+}
+.bb-item { display: flex; align-items: flex-start; gap: 12px; }
+
+/* Outline SVG Icons for Bar */
+.bb-ico { width: 24px; height: 24px; flex-shrink: 0; margin-top: 2px; }
+.bb-ico svg { width: 100%; height: 100%; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.bb-ico.purple-line svg { stroke: #5548D9; }
+.bb-ico.green-line svg { stroke: #16A34A; }
+.bb-ico.blue-line svg { stroke: #2563EB; }
+.bb-ico.orange-line svg { stroke: #E8AA22; }
+
+.bbn { font-size: 12.5px; font-weight: 700; color: #0B1628; margin-bottom: 3px; line-height: 1.2; }
+.bbd { font-size: 10.5px; color: #6B7491; line-height: 1.4; max-width: 110px; }
+
+/* ═══ SECTION 3 — ONE BUILDING ═══ */
+.s3 {
+  background: #fff;
+  padding: 70px 60px 0;
+}
+.s3-grid {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 56px;
+  align-items: start;
+}
 
 /* Left panel */
-.s2-divider{height:1px;background:#E2E8F0;margin:24px 0 30px}
-.feat-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:28px 24px;margin-bottom:36px}
-.feat-item{display:flex;flex-direction:column;gap:0}
-.feat-ico-wrap{width:48px;height:48px;border-radius:12px;background:rgba(85,72,217,.08);display:grid;place-items:center;margin-bottom:12px;transition:background .2s}
-.feat-ico-wrap:hover{background:rgba(85,72,217,.14)}
-.feat-ico-wrap svg{width:22px;height:22px;stroke:var(--c-purple);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.feat-name{font-size:13px;font-weight:700;color:#0F172A;margin-bottom:4px;line-height:1.3}
-.feat-desc{font-size:11.5px;font-weight:400;color:#64748B;line-height:1.6}
-
-.btn-purple{display:inline-flex;align-items:center;gap:9px;background:linear-gradient(135deg,#5548D9 0%,#6655EE 100%);color:#fff;font-size:14px;font-weight:700;padding:15px 28px;border-radius:12px;border:none;cursor:pointer;transition:all .25s;box-shadow:0 4px 18px rgba(85,72,217,.35)}
-.btn-purple svg{width:16px;height:16px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.btn-purple:hover{background:linear-gradient(135deg,#4a3ec8 0%,#5b4adc 100%);box-shadow:0 8px 28px rgba(85,72,217,.45);transform:translateY(-1px)}
-
-/* Map Widget container */
-.map-widget{border-radius:20px;overflow:hidden;border:1px solid #E2E8F0;box-shadow:0 20px 60px rgba(0,0,0,.1),0 4px 16px rgba(0,0,0,.06);background:#fff;display:flex;flex-direction:column;height:100%}
-
-/* Search bar */
-.mw-search{display:flex;align-items:center;justify-content:space-between;padding:16px 22px;background:#fff;border-bottom:1px solid #F1F5F9;gap:16px;min-height:64px}
-.mw-search-l{display:flex;align-items:center;gap:12px;flex:1;min-width:0}
-.gmaps-ico{width:28px;height:28px;flex-shrink:0}
-.mw-search-l p{font-size:14px;font-weight:400;color:#94A3B8;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;letter-spacing:.1px}
-.mw-drop{display:flex;align-items:center;gap:7px;color:var(--c-purple);font-size:13.5px;font-weight:700;cursor:pointer;white-space:nowrap;border:2px solid var(--c-purple);border-radius:100px;padding:9px 20px;transition:all .2s;background:#fff}
-.mw-drop:hover{background:rgba(85,72,217,.06);transform:translateY(-1px);box-shadow:0 4px 12px rgba(85,72,217,.18)}
-.mw-drop svg{width:15px;height:15px;stroke:var(--c-purple);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-
-/* Radius bar */
-.mw-radius{display:flex;align-items:center;gap:4px;padding:10px 22px;background:#fff;border-bottom:1px solid #F1F5F9;overflow-x:auto}
-.mw-rlbl{font-size:12.5px;font-weight:600;color:#94A3B8;white-space:nowrap;margin-right:8px}
-.rad{padding:7px 16px;border-radius:100px;font-size:12.5px;font-weight:600;border:none;cursor:pointer;background:transparent;color:#64748B;transition:all .2s;white-space:nowrap;font-family:inherit;letter-spacing:.1px}
-.rad.on{background:var(--c-purple);color:#fff;box-shadow:0 4px 12px rgba(85,72,217,.3)}
-.rad:not(.on):hover{background:#F1F5F9;color:#3A4566}
-.mw-sel{margin-left:10px;padding:7px 30px 7px 14px;border-radius:100px;border:1.5px solid #E2E8F0;font-size:12.5px;font-weight:600;color:#3A4566;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%236B7491' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat right 12px center;-webkit-appearance:none;appearance:none;font-family:inherit;cursor:pointer;transition:border-color .2s}
-.mw-sel:hover{border-color:#CBD5E1}
-
-/* Map body row */
-.mw-body{display:flex;position:relative;flex:1;min-height:340px;overflow:hidden}
-
-/* Google Maps-style canvas */
-.mw-canvas{flex:1;position:relative;overflow:hidden;background:#E8E0D0}
-/* Roads network overlay */
-.mw-canvas::before{
-  content:'';position:absolute;inset:0;z-index:1;
-  background:
-    linear-gradient(rgba(255,255,255,.92) 0,rgba(255,255,255,.92) 7px,transparent 7px) 0 32%/100% 100%,
-    linear-gradient(rgba(255,255,255,.92) 0,rgba(255,255,255,.92) 7px,transparent 7px) 0 56%/100% 100%,
-    linear-gradient(rgba(255,255,255,.8) 0,rgba(255,255,255,.8) 4px,transparent 4px) 0 20%/100% 100%,
-    linear-gradient(rgba(255,255,255,.8) 0,rgba(255,255,255,.8) 4px,transparent 4px) 0 74%/100% 100%,
-    linear-gradient(rgba(255,255,255,.7) 0,rgba(255,255,255,.7) 3px,transparent 3px) 0 44%/100% 100%,
-    linear-gradient(rgba(255,255,255,.7) 0,rgba(255,255,255,.7) 3px,transparent 3px) 0 86%/100% 100%,
-    linear-gradient(90deg,rgba(255,255,255,.92) 0,rgba(255,255,255,.92) 7px,transparent 7px) 25% 0/100% 100%,
-    linear-gradient(90deg,rgba(255,255,255,.92) 0,rgba(255,255,255,.92) 7px,transparent 7px) 50% 0/100% 100%,
-    linear-gradient(90deg,rgba(255,255,255,.8) 0,rgba(255,255,255,.8) 4px,transparent 4px) 12% 0/100% 100%,
-    linear-gradient(90deg,rgba(255,255,255,.8) 0,rgba(255,255,255,.8) 4px,transparent 4px) 65% 0/100% 100%,
-    linear-gradient(90deg,rgba(255,255,255,.7) 0,rgba(255,255,255,.7) 3px,transparent 3px) 37% 0/100% 100%,
-    linear-gradient(90deg,rgba(255,255,255,.7) 0,rgba(255,255,255,.7) 3px,transparent 3px) 80% 0/100% 100%;
+.s3-left { display: flex; flex-direction: column; gap: 0; }
+.s3-left .sec-h2 {
+  font-size: 48px; font-weight: 800; line-height: 1.06;
+  margin-bottom: 16px; color: #0B1628; letter-spacing: -.8px;
 }
-/* Water body */
-.mw-canvas::after{content:'';position:absolute;top:2%;left:48%;width:42%;height:48%;background:rgba(147,210,232,.65);border-radius:40% 62% 35% 58%;z-index:1}
-/* Parks */
-.map-park{position:absolute;border-radius:10px;background:rgba(186,222,156,.65)}
-.mpk1{top:6%;left:5%;width:10%;height:13%}
-.mpk2{top:60%;left:58%;width:12%;height:11%}
-.mpk3{top:80%;left:18%;width:7%;height:9%}
-.mpk4{top:4%;right:8%;width:9%;height:10%;background:rgba(186,222,156,.5)}
+.s3-left .sec-h2 .gold { color: var(--c-gold); }
+.s3-left .sec-p {
+  font-size: 14px; color: #6B7491; line-height: 1.7;
+  margin-bottom: 36px; max-width: none;
+}
+.s3-feats { display: flex; flex-direction: column; gap: 20px; }
+.s3-feat { display: flex; align-items: flex-start; gap: 14px; }
+.s3-feat-ico {
+  width: 42px; height: 42px; border-radius: 10px;
+  background: rgba(85,72,217,.08); display: grid; place-items: center; flex-shrink: 0;
+}
+.s3-feat-ico svg { width: 20px; height: 20px; stroke: #5548D9; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.s3-feat-ico.green { background: rgba(22,163,74,.09); }
+.s3-feat-ico.green svg { stroke: #16A34A; }
+.s3-feat-ico.amber { background: rgba(212,150,26,.1); }
+.s3-feat-ico.amber svg { stroke: #D4961A; }
+.s3-feat-name { font-size: 13.5px; font-weight: 700; color: #0B1628; margin-bottom: 4px; line-height: 1.3; }
+.s3-feat-desc { font-size: 12px; color: #6B7491; line-height: 1.6; }
 
-/* Zone circles — large translucent blobs like reference */
-.map-zone{position:absolute;border-radius:50%;pointer-events:none;z-index:2}
-.mz-it  {width:300px;height:260px;top:-8%;left:-8%;background:rgba(91,75,232,.18)}
-.mz-ret {width:220px;height:190px;top:0%;right:14%;background:rgba(217,119,6,.16)}
-.mz-log {width:210px;height:190px;top:34%;left:-6%;background:rgba(22,163,74,.17)}
-.mz-biz {width:280px;height:250px;bottom:-10%;left:10%;background:rgba(75,63,216,.16)}
-.mz-foot{width:230px;height:210px;bottom:-4%;right:12%;background:rgba(219,39,119,.16)}
-.mz-center{width:220px;height:220px;top:50%;left:42%;transform:translate(-50%,-50%);background:rgba(85,72,217,.05);border:2px dashed rgba(85,72,217,.4);border-radius:50%;z-index:3}
-
-/* Red center Google-style map pin */
-.rad-dot{position:absolute;top:50%;left:42%;transform:translate(-50%,-90%);z-index:6}
-.rd-pin{width:34px;height:46px;filter:drop-shadow(0 4px 10px rgba(234,67,53,.5))}
-.rad-lbl{position:absolute;top:51%;left:43.5%;background:rgba(0,0,0,.78);color:#fff;font-size:10px;font-weight:700;padding:5px 10px;border-radius:7px;white-space:nowrap;z-index:5;box-shadow:0 2px 8px rgba(0,0,0,.3)}
-
-/* Cluster badges — with icon + name + count */
-.cluster{position:absolute;z-index:5;display:flex;align-items:center;gap:8px;padding:8px 13px 8px 9px;border-radius:12px;color:#fff;box-shadow:0 6px 20px rgba(0,0,0,.28),0 2px 6px rgba(0,0,0,.15);cursor:pointer;transition:all .2s;white-space:nowrap;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
-.cluster:hover{transform:translateY(-2px) scale(1.03);box-shadow:0 10px 28px rgba(0,0,0,.32)}
-.cluster-ico{width:30px;height:30px;border-radius:8px;background:rgba(255,255,255,.25);display:grid;place-items:center;flex-shrink:0}
-.cluster-ico svg{width:16px;height:16px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.cl-name{font-size:12px;font-weight:800;line-height:1.2;letter-spacing:.1px}
-.cl-cnt{font-size:10px;font-weight:500;opacity:.88;margin-top:2px}
-.cl-it  {background:#5B4BE8;top:7%;left:2%}
-.cl-ret {background:#D97706;top:11%;right:25%}
-.cl-log {background:#16A34A;top:47%;left:2%}
-.cl-biz {background:#4B3FD8;bottom:7%;left:18%}
-.cl-foot{background:#DB2777;bottom:13%;right:21%}
-
-/* Scattered property icon positions */
-.mico{position:absolute;z-index:4;width:30px;height:30px;border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:0 2px 8px rgba(0,0,0,.18);cursor:pointer;transition:transform .15s}
-.mico:hover{transform:scale(1.2)}
-.mico svg{width:15px;height:15px;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;fill:none}
-.mico.pu{background:#5548D9}.mico.pu svg{stroke:#fff}
-.mico.am{background:#D97706}.mico.am svg{stroke:#fff}
-.mico.gr{background:#16A34A}.mico.gr svg{stroke:#fff}
-.mico.pk{background:#DB2777}.mico.pk svg{stroke:#fff}
-.mico.wh svg{stroke:#5548D9}
-.mi1{top:30%;left:34%}.mi2{top:22%;left:48%}.mi3{top:30%;right:34%}
-.mi4{top:32%;left:64%}.mi5{top:48%;left:46%}.mi6{top:50%;left:60%}
-.mi7{top:46%;right:18%}.mi8{top:62%;left:30%}.mi9{top:64%;right:24%}
-.mi10{top:64%;left:46%}.mi11{bottom:14%;left:50%}
-
-/* Map controls */
-.mw-ctrls{display:flex;flex-direction:column;gap:8px;padding:12px 8px;background:#fff;border-left:1px solid #F1F5F9;z-index:6;flex-shrink:0}
-.mc{width:46px;height:46px;border-radius:12px;background:#fff;border:1px solid #E2E8F0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.07);transition:all .2s;font-size:9px;font-weight:700;color:#64748B}
-.mc:hover{background:#F8FAFC;box-shadow:0 4px 14px rgba(0,0,0,.1);transform:translateY(-1px)}
-.mc svg{width:18px;height:18px;stroke:#64748B;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.mc-sep{height:1px;background:#E2E8F0;margin:2px 5px}
-.mc-plus,.mc-minus{font-size:22px;font-weight:300;line-height:1;color:#334166;letter-spacing:-1px}
-
-/* Nearby sidebar */
-.mw-sidebar{width:270px;background:#fff;border-left:1px solid #F1F5F9;display:flex;flex-direction:column;z-index:5;flex-shrink:0}
-.ms-hdr{padding:14px 16px 13px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #F1F5F9}
-.ms-hdr-t{font-size:13px;font-weight:700;color:#0F172A}
-.ms-hdr a{font-size:12px;color:var(--c-purple);font-weight:700;letter-spacing:.1px}
-.ms-list{flex:1;overflow-y:auto}
-.ms-row{display:flex;align-items:center;gap:12px;padding:11px 16px;border-bottom:1px solid #F8FAFC;cursor:pointer;transition:background .2s}
-.ms-row:hover{background:#F8FAFC}
-.ms-thumb{width:58px;height:46px;border-radius:10px;flex-shrink:0;overflow:hidden;background-size:cover;background-position:center;box-shadow:0 2px 8px rgba(0,0,0,.1)}
-.ms-thumb.t1{background-image:url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=120&q=80&fit=crop')}
-.ms-thumb.t2{background-image:url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=120&q=80&fit=crop')}
-.ms-thumb.t3{background-image:url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=120&q=80&fit=crop')}
-.ms-thumb.t4{background-image:url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=120&q=80&fit=crop')}
-.ms-info{flex:1;min-width:0}
-.ms-name{font-size:12px;font-weight:700;color:#0F172A;line-height:1.35;margin-bottom:3px}
-.ms-city{font-size:10.5px;color:#64748B;margin-bottom:3px}
-.ms-dist{display:flex;align-items:center;gap:3px;font-size:10.5px;color:#64748B}
-.ms-dist svg{width:10px;height:10px;stroke:#9BA3B5;fill:none;stroke-width:2;flex-shrink:0}
-.ms-bk svg{width:15px;height:15px;stroke:#D0D4E0;fill:none;stroke-width:1.8;flex-shrink:0}
-.ms-foot{padding:13px 16px;border-top:1px solid #F1F5F9}
-.ms-foot a{font-size:12.5px;font-weight:700;color:var(--c-purple);display:flex;align-items:center;gap:6px;transition:gap .2s}
-.ms-foot a:hover{gap:10px}
-
-/* Bottom biz bar */
-.biz-bar{background:#fff;padding:28px 32px;display:flex;align-items:flex-start;gap:0}
-.bb-title{flex-shrink:0;padding-right:32px;border-right:1px solid #E2E8F0;margin-right:36px;min-width:160px}
-.bb-title h4{font-size:18px;font-weight:800;color:#0F172A;line-height:1.3;margin-bottom:8px}
-.bb-title-line{width:36px;height:3px;background:#D4961A;border-radius:2px;margin-bottom:10px}
-.bb-title p{font-size:12px;color:#64748B;line-height:1.55}
-.bb-items{display:flex;gap:32px;flex-wrap:wrap;flex:1;align-items:flex-start}
-.bb-item{display:flex;align-items:flex-start;gap:14px;flex-shrink:0;min-width:120px}
-.bb-ico{width:40px;height:40px;display:grid;place-items:center;flex-shrink:0;border-radius:10px;background:rgba(85,72,217,.06)}
-.bb-ico svg{width:22px;height:22px;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.bb-ico.green{background:rgba(22,163,74,.07)}.bb-ico.green svg{stroke:#16A34A}
-.bb-ico.indigo{background:rgba(85,72,217,.07)}.bb-ico.indigo svg{stroke:#5548D9}
-.bb-ico.amber{background:rgba(212,150,26,.08)}.bb-ico.amber svg{stroke:#D97706}
-.bbn{font-size:13px;font-weight:700;color:#0F172A;margin-bottom:4px;line-height:1.3}
-.bbd{font-size:11px;color:#64748B;line-height:1.6}
-/*══════════════════════════════════════════════
-  6. SECTION 3 — ONE BUILDING  (pixel-perfect)
-══════════════════════════════════════════════*/
-.s3{background:#fff;padding:56px 60px 0}
-
-/* 2-column grid: left-text+features | right building visualization */
-.s3-grid{
-  display:grid;
-  grid-template-columns:360px 1fr;
-  gap:48px;
-  align-items:start;
-  position:relative;
+/* Right: building widget */
+.bldg-area {
+  display: grid;
+  grid-template-columns: 168px 1fr 180px;
+  gap: 0 0;
+  align-items: start;
+  position: relative;
 }
 
-/* LEFT — text + feature list */
-.s3-left{display:flex;flex-direction:column;gap:20px}
-.s3-left .sec-h2{font-size:50px;font-weight:800;line-height:1.05;margin-bottom:14px;color:#0F172A;letter-spacing:-.8px}
-.s3-left .sec-h2 .gold{color:var(--c-gold)}
-.s3-left .sec-p{font-size:14px;color:#64748B;line-height:1.7;margin-bottom:0;max-width:none}
-
-/* Feature list — plain rows, no card background */
-.s3-feats-card{background:transparent;border:none;padding:0;border-radius:0}
-.s3-feats{display:flex;flex-direction:column;gap:16px}
-.s3-feat{display:flex;align-items:flex-start;gap:14px}
-.s3-feat-ico{
-  width:44px;height:44px;border-radius:10px;
-  background:rgba(85,72,217,.09);
-  display:grid;place-items:center;flex-shrink:0;
+/* Address pill at top center */
+.bldg-addr {
+  position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  background: #0B1628; color: #fff;
+  padding: 12px 22px; border-radius: 12px;
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 13.5px; font-weight: 700;
+  box-shadow: 0 8px 24px rgba(11,22,40,.3); z-index: 10; white-space: nowrap;
 }
-.s3-feat-ico svg{width:22px;height:22px;stroke:var(--c-purple);fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
-.s3-feat-ico.green{background:rgba(22,163,74,.09)}
-.s3-feat-ico.green svg{stroke:var(--c-green)}
-.s3-feat-ico.amber{background:rgba(212,150,26,.1)}
-.s3-feat-ico.amber svg{stroke:var(--c-gold)}
-.s3-feat-name{font-size:14px;font-weight:700;color:#0F172A;margin-bottom:4px;line-height:1.3}
-.s3-feat-desc{font-size:12.5px;font-weight:400;color:#64748B;line-height:1.6}
+.bldg-addr svg { width: 15px; height: 15px; stroke: #fff; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
 
-/* RIGHT — building visualization area */
-.bldg-area{
-  position:relative;
-  display:grid;
-  grid-template-columns:172px 1fr 180px;
-  gap:20px;
-  align-items:start;
-  padding-top:0;
+/* Floor tag list (left of image) */
+.floor-list {
+  display: flex; flex-direction: column; gap: 10px;
+  padding-top: 62px; position: relative; z-index: 5;
 }
-
-/* Address pill */
-.bldg-addr{
-  position:absolute;
-  top:0;left:50%;transform:translateX(-50%);
-  background:#0B1628;color:#fff;
-  padding:13px 24px;border-radius:12px;
-  display:inline-flex;align-items:center;gap:10px;
-  font-size:14px;font-weight:700;
-  box-shadow:0 8px 28px rgba(11,22,40,.28);
-  z-index:10;white-space:nowrap;
+.floor-tag {
+  background: #fff; border: 1.5px solid #E8EAEF;
+  border-radius: 12px; padding: 9px 12px;
+  display: flex; align-items: center; gap: 10px;
+  box-shadow: 0 3px 12px rgba(0,0,0,.06);
+  cursor: pointer; transition: all .2s; position: relative;
 }
-.bldg-addr svg{width:16px;height:16px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
-
-/* Center column with building image */
-.bldg-photo-wrap{
-  position:relative;
-  border-radius:16px;overflow:hidden;
-  height:540px;
-  box-shadow:0 20px 60px rgba(0,0,0,.18),0 4px 16px rgba(0,0,0,.08);
-  background:url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=900&q=85&fit=crop') center / cover no-repeat;
-  margin-top:54px;
+.floor-tag:hover { transform: translateX(2px); box-shadow: 0 6px 20px rgba(0,0,0,.1); }
+/* Connector line from floor-tag to building */
+.floor-tag::after {
+  content: ''; position: absolute; left: 100%; top: 50%;
+  transform: translateY(-50%); width: 20px; height: 1.5px;
+  background-image: repeating-linear-gradient(90deg,currentColor 0,currentColor 3px,transparent 3px,transparent 7px);
+  opacity: .45;
 }
-/* Subtle gradient overlay at bottom of building */
-.bldg-photo-wrap::after{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(to bottom,transparent 55%,rgba(11,22,40,.35) 100%);
-  pointer-events:none;
+.floor-tag::before {
+  content: ''; position: absolute; left: calc(100% + 18px); top: 50%;
+  transform: translateY(-50%); width: 6px; height: 6px;
+  border-radius: 50%; background: currentColor; opacity: .65;
 }
 
-/* Floor banners overlaid on building */
-.bldg-floor-lbl{
-  position:absolute;
-  padding:6px 14px;border-radius:6px;
-  color:#fff;font-size:10.5px;font-weight:800;letter-spacing:.7px;
-  text-transform:uppercase;
-  box-shadow:0 4px 14px rgba(0,0,0,.3);
-  z-index:3;white-space:nowrap;right:12%;
-}
-.bfl-1{background:#7E5BEF;top:9%}
-.bfl-2{background:#16A34A;top:26%}
-.bfl-3{background:#EA6C0A;top:43%}
-.bfl-4{background:#3B82F6;top:57%}
-.bfl-5{background:#D97706;top:71%}
-.bfl-6{background:#8B5CF6;top:85%}
+.ftag-ico { width: 32px; height: 32px; border-radius: 8px; display: grid; place-items: center; flex-shrink: 0; }
+.ftag-ico svg { width: 16px; height: 16px; stroke: #fff; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.ftag-text { display: flex; flex-direction: column; gap: 2px; }
+.ftag-name { font-size: 12px; font-weight: 700; color: #0B1628; line-height: 1.2; }
+.ftag-cnt  { font-size: 10px; color: #6B7491; }
 
-/* Floor tag list (left of building) */
-.floor-list{display:flex;flex-direction:column;gap:12px;padding-top:54px;position:relative;z-index:5}
-.floor-tag{
-  background:#fff;border:1.5px solid #E2E8F0;
-  border-radius:12px;padding:10px 13px;
-  display:flex;align-items:center;gap:10px;
-  box-shadow:0 4px 18px rgba(0,0,0,.07);
-  cursor:pointer;transition:all .2s;
-  position:relative;
-}
-.floor-tag:hover{transform:translateX(3px);box-shadow:0 8px 24px rgba(0,0,0,.11)}
+.ft-purple { color: #7E5BEF; } .ft-purple .ftag-ico { background: #7E5BEF; }
+.ft-green  { color: #16A34A; } .ft-green  .ftag-ico { background: #16A34A; }
+.ft-orange { color: #EA6C0A; } .ft-orange .ftag-ico { background: #EA6C0A; }
+.ft-blue   { color: #3B82F6; } .ft-blue   .ftag-ico { background: #3B82F6; }
+.ft-amber  { color: #D97706; } .ft-amber  .ftag-ico { background: #D97706; }
+.ft-violet { color: #7C3AED; } .ft-violet .ftag-ico { background: #7C3AED; }
 
-/* Dotted connector line going right from tag */
-.floor-tag::after{
-  content:'';
-  position:absolute;
-  left:100%;top:50%;transform:translateY(-50%);
-  width:24px;height:1.5px;
-  background-image:repeating-linear-gradient(90deg,currentColor 0,currentColor 4px,transparent 4px,transparent 8px);
-  opacity:.5;
+/* Building photo */
+.bldg-photo-wrap {
+  position: relative; border-radius: 20px; overflow: hidden;
+  height: 560px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.18), 0 4px 16px rgba(0,0,0,.08);
+  background: url('./Section3/section3.png') center / cover no-repeat;
+  margin-top: 62px;
 }
-.floor-tag::before{
-  content:'';
-  position:absolute;
-  left:calc(100% + 22px);top:50%;transform:translateY(-50%);
-  width:6px;height:6px;border-radius:50%;
-  background:currentColor;opacity:.7;
+.bldg-photo-wrap::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(to bottom, transparent 50%, rgba(11,22,40,.28) 100%);
+  pointer-events: none;
 }
 
-.ftag-ico{
-  width:34px;height:34px;border-radius:8px;
-  display:grid;place-items:center;flex-shrink:0;
+/* Floor labels inside image */
+.bldg-floor-lbl {
+  position: absolute; padding: 5px 12px; border-radius: 5px;
+  color: #fff; font-size: 10px; font-weight: 800;
+  letter-spacing: .6px; text-transform: uppercase;
+  box-shadow: 0 3px 10px rgba(0,0,0,.25); z-index: 3; white-space: nowrap;
+  right: 10%;
 }
-.ftag-ico svg{width:17px;height:17px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.ft-purple{color:#7E5BEF}.ft-purple .ftag-ico{background:#7E5BEF}
-.ft-green {color:#16A34A}.ft-green  .ftag-ico{background:#16A34A}
-.ft-orange{color:#EA6C0A}.ft-orange .ftag-ico{background:#EA6C0A}
-.ft-blue  {color:#3B82F6}.ft-blue   .ftag-ico{background:#3B82F6}
-.ft-amber {color:#D97706}.ft-amber  .ftag-ico{background:#D97706}
-.ft-violet{color:#7C3AED}.ft-violet .ftag-ico{background:#7C3AED}
+.bfl-1 { background: #7E5BEF; top: 8%;  }
+.bfl-2 { background: #16A34A; top: 24%; }
+.bfl-3 { background: #EA6C0A; top: 41%; }
+.bfl-4 { background: #3B82F6; top: 56%; }
+.bfl-5 { background: #D97706; top: 71%; }
+.bfl-6 { background: #7C3AED; top: 85%; }
 
-.ftag-text{display:flex;flex-direction:column;gap:2px}
-.ftag-name{font-size:12.5px;font-weight:700;color:#0F172A;line-height:1.2}
-.ftag-cnt{font-size:10.5px;color:#64748B}
-
-/* Right column — benefits */
-.s3r-list{display:flex;flex-direction:column;gap:22px;padding-top:54px}
-.s3r-item{display:flex;align-items:flex-start;gap:12px}
-.s3r-ico{
-  width:42px;height:42px;border-radius:50%;
-  background:#0B1628;
-  display:grid;place-items:center;flex-shrink:0;
+/* Right: benefit list */
+.s3r-list { display: flex; flex-direction: column; gap: 20px; padding-top: 62px; }
+.s3r-item { display: flex; align-items: flex-start; gap: 12px; }
+.s3r-ico {
+  width: 40px; height: 40px; border-radius: 50%; background: #0B1628;
+  display: grid; place-items: center; flex-shrink: 0;
 }
-.s3r-ico svg{width:20px;height:20px;stroke:#fff;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.s3r-name{font-size:13px;font-weight:800;color:#0F172A;margin-bottom:4px;line-height:1.3}
-.s3r-desc{font-size:11.5px;color:#64748B;line-height:1.6}
+.s3r-ico svg { width: 18px; height: 18px; stroke: #fff; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.s3r-name { font-size: 12.5px; font-weight: 800; color: #0B1628; margin-bottom: 4px; line-height: 1.3; }
+.s3r-desc { font-size: 11px; color: #6B7491; line-height: 1.6; }
 
-/* ─── BUILT FOR INDIA bar ─── */
-.india-bar{
-  margin:40px 60px 0;
-  background:#FAFAFD;border:1px solid #E2E8F0;
-  border-radius:20px;
-  padding:28px 36px;
-  display:grid;
-  grid-template-columns:auto auto 1fr;
-  gap:48px;align-items:center;
-}
+/* India bar */
+.india-bar { margin: 48px 60px 0; background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 20px; padding: 28px 36px; display: grid; grid-template-columns: auto auto 1fr; gap: 48px; align-items: center; }
 .india-l h3{font-size:24px;font-weight:800;line-height:1.2;color:#0F172A;margin-bottom:10px}
 .india-l p{font-size:13px;color:#64748B;line-height:1.55}
 
@@ -639,12 +827,7 @@ button{font-family:inherit;cursor:pointer}
 .india-langs-h{font-size:13px;font-weight:700;color:#0F172A}
 .india-chips{display:flex;gap:14px;align-items:flex-start}
 .ich{display:flex;flex-direction:column;align-items:center;gap:7px;cursor:pointer}
-.ich-circle{
-  min-width:52px;height:52px;padding:0 12px;
-  border-radius:100px;
-  display:grid;place-items:center;
-  font-size:14px;font-weight:700;white-space:nowrap;
-}
+.ich-circle{min-width:52px;height:52px;padding:0 12px;border-radius:100px;display:grid;place-items:center;font-size:14px;font-weight:700;white-space:nowrap;}
 .ich-circle.en  {background:rgba(85,72,217,.1);color:var(--c-purple)}
 .ich-circle.hi  {background:rgba(244,114,182,.1);color:#EC4899}
 .ich-circle.te  {background:rgba(234,108,10,.1);color:var(--c-orange)}
@@ -655,28 +838,14 @@ button{font-family:inherit;cursor:pointer}
 
 .india-feats{display:flex;gap:36px;justify-content:flex-end;align-items:flex-start}
 .if-item{display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;min-width:90px}
-.if-ico{
-  width:50px;height:50px;border-radius:14px;
-  background:rgba(85,72,217,.08);border:1.5px solid rgba(85,72,217,.12);
-  display:grid;place-items:center;
-}
+.if-ico{width:50px;height:50px;border-radius:14px;background:rgba(85,72,217,.08);border:1.5px solid rgba(85,72,217,.12);display:grid;place-items:center;}
 .if-ico svg{width:24px;height:24px;stroke:var(--c-purple);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .if-name{font-size:12px;font-weight:700;color:#0F172A;line-height:1.45}
 
-/* ─── Category bar ─── */
 .cat-bar-outer{padding:16px 60px 40px;background:#fff}
-.cat-bar{
-  background:#fff;border:1px solid #E2E8F0;border-radius:16px;
-  padding:20px 32px;
-  display:flex;align-items:center;gap:40px;
-  overflow-x:auto;white-space:nowrap;
-  box-shadow:0 2px 12px rgba(0,0,0,.04);
-}
+.cat-bar{background:#fff;border:1px solid #E2E8F0;border-radius:16px;padding:20px 32px;display:flex;align-items:center;gap:40px;overflow-x:auto;white-space:nowrap;box-shadow:0 2px 12px rgba(0,0,0,.04);}
 .cat{display:flex;align-items:center;gap:12px;flex-shrink:0;cursor:pointer}
-.cat-ico{
-  width:42px;height:42px;border-radius:50%;
-  display:grid;place-items:center;flex-shrink:0;
-}
+.cat-ico{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;flex-shrink:0;}
 .cat-ico svg{width:22px;height:22px;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 .cat-ico.purple{background:rgba(85,72,217,.08)} .cat-ico.purple svg{stroke:var(--c-purple)}
 .cat-ico.green {background:rgba(22,163,74,.1)} .cat-ico.green svg{stroke:var(--c-green)}
@@ -687,336 +856,261 @@ button{font-family:inherit;cursor:pointer}
 .cat-name{font-size:13.5px;font-weight:700;color:var(--c-t1);line-height:1.2}
 .cat-desc{font-size:11px;color:var(--c-t3);margin-top:2px}
 
-/*══════════════════════════════════════════════
-  7. SECTION 4 — KEY PLAYERS  (pixel-perfect)
-══════════════════════════════════════════════*/
-.s4{
-  background:#F7F7FC;
-  padding:56px 60px 52px;
+/* ═══ UPDATED SECTION 4 CSS ═══ */
+.s4 {
+  background: #F8FAFF;
+  padding: 80px 60px;
+  font-family: 'Poppins', sans-serif;
 }
 
-/* Header */
-.s4-hdr{text-align:center;margin-bottom:36px}
-.s4-supertag{
-  display:inline-flex;align-items:center;
-  font-size:10.5px;font-weight:700;letter-spacing:2px;
-  color:#64748B;margin-bottom:18px;
-  text-transform:uppercase;
-  border:1px solid #E2E8F0;border-radius:100px;
-  padding:6px 18px;background:#fff;
-}
-.s4-h2{
-  font-size:50px;font-weight:800;
-  line-height:1.08;margin-bottom:16px;
-  color:#0F172A;letter-spacing:-.5px;
-}
-.s4-h2 .purple{
-  background:linear-gradient(135deg,#5548D9 0%,#7C6FF7 100%);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  background-clip:text;
-}
-.s4-sub{
-  font-size:15px;font-weight:400;
-  color:#64748B;line-height:1.7;
+.s4-hdr { text-align: center; margin-bottom: 50px; }
+
+.s4-supertag {
+  background: #EEEAFF;
+  color: #635AD9;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 100px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  margin-bottom: 15px;
 }
 
-/* Cards grid */
-.players{
-  display:grid;grid-template-columns:repeat(3,1fr);
-  gap:24px;margin-bottom:24px;
+.s4-h2 {
+  font-size: 42px;
+  font-weight: 800;
+  color: #0D1733;
+  margin-bottom: 15px;
+  letter-spacing: -0.5px;
 }
 
-.pcard{
-  background:#fff;
-  border-radius:20px;overflow:visible;
-  border:1.5px solid #E8EAF0;
-  box-shadow:0 4px 20px rgba(0,0,0,.06),0 1px 4px rgba(0,0,0,.04);
-  transition:box-shadow .25s,transform .2s;
-  cursor:pointer;position:relative;
-}
-.pcard:hover{
-  box-shadow:0 20px 56px rgba(0,0,0,.13),0 4px 16px rgba(0,0,0,.07);
-  transform:translateY(-6px);
+.s4-h2 .purple { color: #5548D9; }
+
+.s4-sub {
+  font-size: 15px;
+  color: #6B7491;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-/* Photo area */
-.pc-img{
-  height:210px;
-  border-radius:18px 18px 0 0;
-  overflow:hidden;
-  position:relative;
-  background-size:cover !important;
-  background-position:center center !important;
-}
-.pc-img::before{display:none}
-
-.pc-img.fr{
-  background:url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=80&fit=crop');
-}
-.pc-img.br{
-  background:url('https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&q=80&fit=crop');
-}
-.pc-img.ow{
-  background:url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80&fit=crop');
+.players {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 40px;
 }
 
-/* Badge — overlapping the photo bottom edge */
-.pc-badge{
-  position:absolute;
-  bottom:-32px;left:50%;
-  transform:translateX(-50%);
-  width:64px;height:64px;
-  border-radius:50%;
-  border:4px solid #fff;
-  display:grid;place-items:center;
-  box-shadow:0 6px 24px rgba(0,0,0,.18);
-  z-index:4;
-}
-.pc-badge svg{
-  width:28px;height:28px;
-  stroke:#fff;fill:none;
-  stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;
-}
-.pc-badge.fr{background:var(--c-purple)}
-.pc-badge.br{background:#F27052}
-.pc-badge.ow{background:var(--c-green)}
-
-/* Card body */
-.pc-body{padding:46px 28px 28px}
-
-.pc-role{
-  font-size:14px;font-weight:800;
-  text-align:center;margin-bottom:10px;
-  letter-spacing:1px;text-transform:uppercase;
-}
-.pc-role.fr{color:var(--c-purple)}
-.pc-role.br{color:#F27052}
-.pc-role.ow{color:var(--c-green)}
-
-.pc-tagline{
-  font-size:13.5px;font-weight:400;color:#64748B;
-  text-align:center;line-height:1.65;
-  margin-bottom:22px;
+.pcard {
+  background: #fff;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+  transition: transform 0.3s ease;
+  border: 1px solid #F0F2F5;
 }
 
-/* Bullet list with filled colored check circles */
-.pc-list{
-  list-style:none;
-  display:flex;flex-direction:column;gap:12px;
-  margin-bottom:24px;
-  padding:0;
-}
-.pc-list li{
-  display:flex;align-items:center;gap:10px;
-  font-size:13px;font-weight:500;color:#334166;line-height:1.35;
-}
-.pc-check{
-  width:21px;height:21px;border-radius:50%;
-  display:grid;place-items:center;flex-shrink:0;
-}
-.pc-check svg{
-  width:11px;height:11px;
-  stroke:#fff;fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;
-}
-.pc-check.fr{background:var(--c-purple)}
-.pc-check.br{background:#F27052}
-.pc-check.ow{background:var(--c-green)}
+.pcard:hover { transform: translateY(-5px); }
 
-/* Divider before link */
-.pc-divider{height:1px;background:#F1F5F9;margin-bottom:20px}
-
-.pc-link{
-  display:flex;align-items:center;justify-content:center;gap:6px;
-  font-size:13.5px;font-weight:700;
-}
-.pc-link.fr{color:var(--c-purple)}
-.pc-link.br{color:#F27052}
-.pc-link.ow{color:var(--c-green)}
-.pc-link:hover{text-decoration:underline}
-
-/* Looking card — lavender bg, full width */
-.looking-wrap{display:flex;justify-content:center}
-.looking{
-  background:#EEEAFA;
-  border-radius:18px;
-  padding:24px 32px;
-  display:flex;align-items:center;gap:20px;
-  width:100%;
-}
-.lk-ico-wrap{
-  width:62px;height:62px;border-radius:16px;
-  background:rgba(85,72,217,.14);
-  display:grid;place-items:center;flex-shrink:0;
-}
-.lk-ico-wrap svg{
-  width:30px;height:30px;
-  stroke:var(--c-purple);fill:none;
-  stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;
-}
-.lk-t h4{font-size:16px;font-weight:700;color:#0F172A;margin-bottom:4px}
-.lk-t p{font-size:13px;color:#64748B;line-height:1.55}
-.lk-btn{
-  margin-left:auto;flex-shrink:0;
-  border:2px solid var(--c-purple);
-  color:var(--c-purple);
-  background:#fff;
-  padding:13px 26px;border-radius:12px;
-  font-size:13.5px;font-weight:700;
-  display:flex;align-items:center;gap:7px;
-  transition:background .2s,color .2s,transform .2s;white-space:nowrap;
-  font-family:inherit;cursor:pointer;
-}
-.lk-btn:hover{background:var(--c-purple);color:#fff;transform:translateY(-1px)}
-
-/*══════════════════════════════════════════════
-  8. CTA + FOOTER  (pixel-perfect)
-══════════════════════════════════════════════*/
-.cta-outer{
-  background:#F7F7FC;
-  padding:0;
-}
-.cta-card{
-  background:var(--c-footer);
-  border-radius:0;overflow:hidden;
+.pc-img {
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
 }
 
-/* CTA row */
-.cta-row{
-  display:flex;align-items:center;gap:0;
-  padding:0;
-  border-bottom:1px solid rgba(255,255,255,.07);
-  min-height:200px;
+.pc-img.fr { background-image: url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=80&fit=crop'); }
+.pc-img.br { background-image: url('https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&q=80&fit=crop'); }
+.pc-img.ow { background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80&fit=crop'); }
+
+.pc-badge {
+  position: absolute;
+  bottom: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  border: 4px solid #fff;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
-.cta-img{
-  width:300px;height:200px;flex-shrink:0;overflow:hidden;
-  background:url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80&fit=crop') center / cover no-repeat;
-  position:relative;
+
+.pc-badge svg { width: 24px; height: 24px; stroke: #fff; fill: none; stroke-width: 2; }
+
+.pc-badge.fr { background: #7C6FF7; }
+.pc-badge.br { background: #F27052; }
+.pc-badge.ow { background: #45B37E; }
+
+.pc-body { padding: 45px 30px 30px; text-align: center; }
+
+.pc-role {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
 }
-.cta-img::after{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(to right,transparent 60%,var(--c-footer) 100%);
+
+.pc-role.fr { color: #7C6FF7; }
+.pc-role.br { color: #F27052; }
+.pc-role.ow { color: #45B37E; }
+
+.pc-tagline {
+  font-size: 14px;
+  color: #4A5578;
+  line-height: 1.5;
+  margin-bottom: 25px;
 }
+
+.pc-list {
+  list-style: none;
+  text-align: left;
+  margin-bottom: 25px;
+}
+
+.pc-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #3A4566;
+  margin-bottom: 14px;
+}
+
+.pc-check {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.pc-check svg { width: 12px; height: 12px; stroke: #fff; }
+
+.pc-check.fr { background: #7C6FF7; }
+.pc-check.br { background: #F27052; }
+.pc-check.ow { background: #45B37E; }
+
+.pc-divider {
+  height: 1px;
+  background: #F1F3F7;
+  margin: 20px 0;
+}
+
+.pc-link {
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.looking-wrap { margin-top: 20px; }
+
+.looking {
+  background: #F5F3FF;
+  border-radius: 20px;
+  padding: 20px 35px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.lk-ico-wrap {
+  width: 54px;
+  height: 54px;
+  background: #DDD6FE;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  color: #5548D9;
+}
+
+.lk-ico-wrap svg { width: 28px; height: 28px; }
+
+.lk-t h4 { font-size: 16px; font-weight: 700; color: #0D1733; margin-bottom: 4px; }
+.lk-t p { font-size: 13.5px; color: #6B7491; }
+
+.lk-btn {
+  margin-left: auto;
+  background: #fff;
+  border: 1.5px solid #5548D9;
+  color: #5548D9;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 14px;
+  transition: all 0.2s;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.lk-btn:hover { background: #5548D9; color: #fff; }
+
+/* ═══ CTA + FOOTER ═══ */
+.cta-outer{background:#F7F7FC;padding:0;}
+.cta-card{background:var(--c-footer);border-radius:0;overflow:hidden;}
+
+.cta-row{display:flex;align-items:center;gap:0;padding:0;border-bottom:1px solid rgba(255,255,255,.07);min-height:200px;}
+.cta-img{width:300px;height:200px;flex-shrink:0;overflow:hidden;background:url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80&fit=crop') center / cover no-repeat;position:relative;}
+.cta-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,transparent 60%,var(--c-footer) 100%);}
 .cta-copy{flex:1;padding:32px 36px}
-.cta-copy h2{
-  font-size:30px;font-weight:800;color:#fff;
-  line-height:1.25;margin-bottom:10px;
-}
+.cta-copy h2{font-size:30px;font-weight:800;color:#fff;line-height:1.25;margin-bottom:10px;}
 .cta-copy p{font-size:14px;color:rgba(255,255,255,.55);line-height:1.6}
 
-/* Vertical divider */
-.cta-divider{
-  width:1px;height:120px;flex-shrink:0;
-  background:rgba(255,255,255,.1);
-  align-self:center;
-}
+.cta-divider{width:1px;height:120px;flex-shrink:0;background:rgba(255,255,255,.1);align-self:center;}
 
 .cta-btns{display:flex;flex-direction:column;gap:10px;flex-shrink:0;padding:32px 36px;}
-.cta-btn{
-  display:flex;align-items:center;gap:14px;
-  background:rgba(255,255,255,.06);
-  border:1px solid rgba(255,255,255,.1);
-  border-radius:12px;padding:14px 18px;
-  min-width:260px;cursor:pointer;
-  transition:background .2s,border-color .2s;
-  text-decoration:none;
-}
+.cta-btn{display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:14px 18px;min-width:260px;cursor:pointer;transition:background .2s,border-color .2s;text-decoration:none;}
 .cta-btn:hover{background:rgba(255,255,255,.11);border-color:rgba(255,255,255,.18)}
-.cb-ico{
-  width:42px;height:42px;border-radius:10px;
-  background:var(--c-purple);
-  display:grid;place-items:center;flex-shrink:0;
-}
+.cb-ico{width:42px;height:42px;border-radius:10px;background:var(--c-purple);display:grid;place-items:center;flex-shrink:0;}
 .cb-ico svg{width:20px;height:20px;stroke:#fff;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .cb-ico.alt{background:rgba(255,255,255,.09)}
 .cb-name{font-size:13px;font-weight:700;color:#fff}
 .cb-sub{font-size:11px;color:rgba(255,255,255,.45);margin-top:2px}
 .cb-arr{margin-left:auto;color:rgba(255,255,255,.38);font-size:16px;font-weight:300}
 
-/* Footer grid */
 .footer{padding:36px 60px 0}
-.f-grid{
-  display:grid;
-  grid-template-columns:1.55fr 1fr 1fr 1fr 1.45fr;
-  gap:36px;margin-bottom:32px;
-}
+.f-grid{display:grid;grid-template-columns:1.55fr 1fr 1fr 1fr 1.45fr;gap:36px;margin-bottom:32px;}
 
-/* Brand col */
-.f-brand-name{
-  font-size:22px;font-weight:800;color:#fff;
-  letter-spacing:.5px;margin-bottom:12px;
-}
-.f-tagline{
-  font-size:13px;color:rgba(255,255,255,.5);
-  line-height:1.65;margin-bottom:18px;
-}
+.f-brand-name{font-size:22px;font-weight:800;color:#fff;letter-spacing:.5px;margin-bottom:12px;}
+.f-tagline{font-size:13px;color:rgba(255,255,255,.5);line-height:1.65;margin-bottom:18px;}
 .f-hr{height:2px;background:var(--c-purple);width:36px;margin-bottom:18px;border-radius:2px}
 .f-contacts{display:flex;flex-direction:column;gap:10px;margin-bottom:18px}
-.f-ci{
-  display:flex;align-items:flex-start;gap:9px;
-  font-size:11.5px;color:rgba(255,255,255,.52);line-height:1.5;
-}
+.f-ci{display:flex;align-items:flex-start;gap:9px;font-size:11.5px;color:rgba(255,255,255,.52);line-height:1.5;}
 .f-ci-ico{flex-shrink:0;margin-top:1px}
 .f-ci-ico svg{width:14px;height:14px;stroke:rgba(255,255,255,.45);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .f-social{display:flex;gap:9px}
-.fsoc{
-  width:36px;height:36px;border-radius:50%;
-  border:1px solid rgba(255,255,255,.14);
-  display:grid;place-items:center;
-  cursor:pointer;transition:border-color .2s,background .2s;
-  flex-shrink:0;
-}
+.fsoc{width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.14);display:grid;place-items:center;cursor:pointer;transition:border-color .2s,background .2s;flex-shrink:0;}
 .fsoc svg{width:15px;height:15px;stroke:rgba(255,255,255,.55);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;transition:stroke .2s}
 .fsoc:hover{border-color:var(--c-purpleL);background:rgba(165,153,255,.1)}
 .fsoc:hover svg{stroke:var(--c-purpleL)}
 
-/* Nav cols */
-.f-col-h{
-  font-size:13px;font-weight:700;color:var(--c-purpleL);
-  letter-spacing:.2px;margin-bottom:16px;
-}
+.f-col-h{font-size:13px;font-weight:700;color:var(--c-purpleL);letter-spacing:.2px;margin-bottom:16px;}
 .f-links{list-style:none;display:flex;flex-direction:column;gap:11px}
 .f-links a{font-size:13px;color:rgba(255,255,255,.52);transition:color .15s}
 .f-links a:hover{color:#fff}
 .f-links a.sub{padding-left:10px}
 
-/* Newsletter col */
 .fnl-h{font-size:13px;font-weight:700;color:var(--c-purpleL);margin-bottom:8px;letter-spacing:.2px}
 .fnl-p{font-size:12.5px;color:rgba(255,255,255,.45);line-height:1.65;margin-bottom:14px}
-.nl-wrap{
-  display:flex;border-radius:10px;overflow:hidden;
-  border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);
-}
-.nl-wrap input{
-  flex:1;background:transparent;
-  border:none;padding:12px 14px;
-  color:#fff;font-size:13px;font-family:inherit;outline:none;
-}
+.nl-wrap{display:flex;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);}
+.nl-wrap input{flex:1;background:transparent;border:none;padding:12px 14px;color:#fff;font-size:13px;font-family:inherit;outline:none;}
 .nl-wrap input::placeholder{color:rgba(255,255,255,.28)}
-.nl-wrap button{
-  background:var(--c-purple);border:none;
-  padding:12px 18px;color:#fff;font-size:16px;cursor:pointer;
-  transition:background .2s;display:grid;place-items:center;
-}
+.nl-wrap button{background:var(--c-purple);border:none;padding:12px 18px;color:#fff;font-size:16px;cursor:pointer;transition:background .2s;display:grid;place-items:center;}
 .nl-wrap button:hover{background:var(--c-purple2)}
 .nl-btn-svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
 .f-trust{margin-top:18px;display:flex;flex-direction:column;gap:12px}
 .ft{display:flex;align-items:flex-start;gap:10px}
-.ft-ico-wrap{
-  width:32px;height:32px;border-radius:8px;
-  background:rgba(85,72,217,.2);flex-shrink:0;
-  display:grid;place-items:center;
-}
+.ft-ico-wrap{width:32px;height:32px;border-radius:8px;background:rgba(85,72,217,.2);flex-shrink:0;display:grid;place-items:center;}
 .ft-ico-wrap svg{width:16px;height:16px;stroke:var(--c-purpleL);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .ft-name{font-size:12px;font-weight:700;color:rgba(255,255,255,.8);margin-bottom:2px}
 .ft-desc{font-size:11px;color:rgba(255,255,255,.4);line-height:1.45}
 
-/* Bottom bar */
-.f-bottom{
-  border-top:1px solid rgba(255,255,255,.08);
-  padding:16px 0;
-  display:flex;align-items:center;justify-content:space-between;
-  gap:14px;flex-wrap:wrap;
-}
+.f-bottom{border-top:1px solid rgba(255,255,255,.08);padding:16px 0;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;}
 .f-copy{font-size:11.5px;color:rgba(255,255,255,.38);display:flex;align-items:center;gap:7px}
 .f-copy svg{width:14px;height:14px;stroke:rgba(255,255,255,.35);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
 .f-legal{display:flex;align-items:center;gap:16px}
@@ -1025,9 +1119,7 @@ button{font-family:inherit;cursor:pointer}
 .f-sep{color:rgba(255,255,255,.14)}
 .f-made{font-size:11.5px;color:rgba(255,255,255,.38);display:flex;align-items:center;gap:6px}
 
-/*──────────────────────────────────────────
-  ANIMATIONS
-──────────────────────────────────────────*/
+/* ═══ ANIMATIONS & RESPONSIVE ═══ */
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
 .hero-left > *{animation:fadeUp .7s ease both}
 .hero-left > *:nth-child(1){animation-delay:.07s}
@@ -1035,15 +1127,16 @@ button{font-family:inherit;cursor:pointer}
 .hero-left > *:nth-child(3){animation-delay:.27s}
 .hero-left > *:nth-child(4){animation-delay:.37s}
 
-/*──────────────────────────────────────────
-  RESPONSIVE
-──────────────────────────────────────────*/
 @media(max-width:1120px){
   .hero{grid-template-columns:1fr}
   .hero-right{display:none}
   .s2-inner,.s3-inner{grid-template-columns:1fr}
-  .players{grid-template-columns:1fr 1fr}
   .f-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width: 1024px) {
+  .players { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto 30px; }
+  .looking { flex-direction: column; text-align: center; }
+  .lk-btn { margin-left: 0; width: 100%; }
 }
 @media(max-width:768px){
   .navbar{padding:0 20px}
@@ -1065,11 +1158,9 @@ button{font-family:inherit;cursor:pointer}
 </head>
 <body>
 
-<!-- ═══ NAVBAR ═══ -->
 <nav class="navbar">
   <div class="logo">
     <div class="logo-box">
-      <!-- CREMP building grid icon -->
       <svg viewBox="0 0 24 24">
         <rect x="3" y="3" width="7" height="7" rx="1"/>
         <rect x="14" y="3" width="7" height="7" rx="1"/>
@@ -1104,9 +1195,7 @@ button{font-family:inherit;cursor:pointer}
   </div>
 </nav>
 
-<!-- ═══ HERO ═══ -->
 <section class="hero">
-  <!-- LEFT -->
   <div class="hero-left">
     <div class="hero-pill">INDIA'S COMMERCIAL OPPORTUNITY MARKETPLACE</div>
     <h1 class="hero-h1">
@@ -1124,12 +1213,10 @@ button{font-family:inherit;cursor:pointer}
     </div>
   </div>
 
-  <!-- RIGHT — Building photo + overlays -->
   <div class="hero-right">
     <div class="hero-map-bg"></div>
     <div class="hero-building"></div>
 
-    <!-- Floating map pins -->
     <div class="map-pin hmp1">
 <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><path d="M32 4C20.4 4 11 13.4 11 25c0 15.8 21 35 21 35s21-19.2 21-35C53 13.4 43.6 4 32 4zm0 30a9 9 0 1 1 0-18 9 9 0 0 1 0 18z" fill="#D49619"/></svg>
       Office Spaces
@@ -1147,7 +1234,6 @@ button{font-family:inherit;cursor:pointer}
       Businesses for Sale
     </div>
 
-    <!-- Side listing cards -->
     <div class="hero-sidecards">
       <div class="hsc">
         <div class="hsc-ico"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div>
@@ -1173,10 +1259,8 @@ button{font-family:inherit;cursor:pointer}
   </div>
 </section>
 
-<!-- ═══ QUICK ACTIONS ═══ -->
 <section class="qa-wrap">
   <div class="qa-grid">
-
     <div class="qa-card">
       <div class="qa-icon dark"><svg viewBox="0 0 24 24"><path d="M6 22V4a2 2 0 012-2h8a2 2 0 012 2v18Z"/><path d="M6 12H4a2 2 0 00-2 2v6a2 2 0 002 2h2"/><path d="M18 9h2a2 2 0 012 2v9a2 2 0 01-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg></div>
       <div class="qa-num dark">1</div>
@@ -1224,11 +1308,9 @@ button{font-family:inherit;cursor:pointer}
       <p>Buy or lease existing businesses and take over a profitable operation.</p>
       <button class="qa-btn gold">Explore Businesses &nbsp;→</button>
     </div>
-
   </div>
 </section>
 
-<!-- ═══ STATS BAR ═══ -->
 <div class="stats-bar">
   <div class="stat">
     <div class="stat-ico"><svg viewBox="0 0 24 24"><path d="M6 22V4a2 2 0 012-2h8a2 2 0 012 2v18Z"/><path d="M6 12H4a2 2 0 00-2 2v6a2 2 0 002 2h2"/><path d="M18 9h2a2 2 0 012 2v9a2 2 0 01-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg></div>
@@ -1252,19 +1334,14 @@ button{font-family:inherit;cursor:pointer}
     <a class="btn-dark" href="#">Contact Us &nbsp;→</a>
   </div>
 </div>
-<!-- ═══════════════════════════════════════════════
-     SECTION 2  —  PRECISION MAP SEARCH
-═══════════════════════════════════════════════ -->
+
 <section class="s2">
   <div class="s2-inner">
 
-    <!-- LEFT: Heading + Features -->
-    <div>
+    <div class="s2-left">
       <div class="sec-tag">WHY CREMP IS DIFFERENT</div>
       <h2 class="sec-h2">Precision Commercial<br>Search <span class="purple">Beyond Localities</span></h2>
       <p class="sec-p">Google pin-based search to find the right commercial<br>opportunities in exact business clusters.</p>
-
-      <div class="s2-divider"></div>
 
       <div class="feat-grid">
         <div class="feat-item">
@@ -1293,7 +1370,7 @@ button{font-family:inherit;cursor:pointer}
             <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.74"/></svg>
           </div>
           <div class="feat-name">Nearby Ecosystem</div>
-          <div class="feat-desc">Brokers, businesses &<br>franchises around you</div>
+          <div class="feat-desc">Brokers, businesses &amp;<br>franchises around you</div>
         </div>
         <div class="feat-item">
           <div class="feat-ico-wrap">
@@ -1306,21 +1383,19 @@ button{font-family:inherit;cursor:pointer}
           <div class="feat-ico-wrap">
             <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
           </div>
-          <div class="feat-name">Verified & Trusted</div>
+          <div class="feat-name">Verified &amp; Trusted</div>
           <div class="feat-desc">Quality listings from<br>verified sources</div>
         </div>
       </div>
 
       <button class="btn-purple">
-        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/></svg>
         Explore Commercial Clusters &nbsp;→
       </button>
     </div>
 
-    <!-- RIGHT: Map Widget -->
     <div class="map-widget">
 
-      <!-- Search bar -->
       <div class="mw-search">
         <div class="mw-search-l">
           <svg class="gmaps-ico" viewBox="0 0 24 24" fill="none">
@@ -1343,7 +1418,6 @@ button{font-family:inherit;cursor:pointer}
         </div>
       </div>
 
-      <!-- Radius filter -->
       <div class="mw-radius">
         <span class="mw-rlbl">Radius</span>
         <button class="rad">1 km</button>
@@ -1353,26 +1427,18 @@ button{font-family:inherit;cursor:pointer}
         <select class="mw-sel" title="Filter opportunity type"><option>All Opportunities</option></select>
       </div>
 
-      <!-- Map body -->
       <div class="mw-body">
 
-        <!-- Map canvas -->
         <div class="mw-canvas">
-          <!-- Parks -->
-          <div class="map-park mpk1"></div>
-          <div class="map-park mpk2"></div>
-          <div class="map-park mpk3"></div>
-          <div class="map-park mpk4"></div>
-
-          <!-- Zone overlays -->
+          <div class="map-radius-ring r1"></div>
+          <div class="map-radius-ring r2"></div>
+          
           <div class="map-zone mz-it"></div>
           <div class="map-zone mz-ret"></div>
           <div class="map-zone mz-log"></div>
           <div class="map-zone mz-biz"></div>
           <div class="map-zone mz-foot"></div>
-          <div class="map-zone mz-center"></div>
 
-          <!-- Center pin -->
           <div class="rad-dot">
             <svg class="rd-pin" viewBox="0 0 24 36" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M12 0C5.37 0 0 5.37 0 12c0 8.4 12 24 12 24S24 20.4 24 12C24 5.37 18.63 0 12 0z" fill="#EA4335"/>
@@ -1381,7 +1447,6 @@ button{font-family:inherit;cursor:pointer}
           </div>
           <div class="rad-lbl">2 km Radius</div>
 
-          <!-- Cluster badges -->
           <div class="cluster cl-it">
             <div class="cluster-ico"><svg viewBox="0 0 24 24"><path d="M6 22V4a2 2 0 012-2h8a2 2 0 012 2v18Z"/><path d="M6 12H4a2 2 0 00-2 2v6a2 2 0 002 2h2"/><path d="M18 9h2a2 2 0 012 2v9a2 2 0 01-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/></svg></div>
             <div><div class="cl-name">IT Corridor</div><div class="cl-cnt">128 Opportunities</div></div>
@@ -1407,22 +1472,15 @@ button{font-family:inherit;cursor:pointer}
             <div><div class="cl-name">High Footfall Zone</div><div class="cl-cnt">112 Opportunities</div></div>
           </div>
 
-          <!-- Scattered icons across map -->
           <div class="mico pu mi1"><svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/></svg></div>
-          <div class="mico pu mi2"><svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/></svg></div>
           <div class="mico am mi3"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14h18V6l-3-4z"/></svg></div>
-          <div class="mico gr mi4"><svg viewBox="0 0 24 24"><path d="M6 22V4a2 2 0 012-2h8a2 2 0 012 2v18Z"/><path d="M10 14h4"/></svg></div>
-          <div class="mico gr mi5"><svg viewBox="0 0 24 24"><path d="M6 22V4a2 2 0 012-2h8a2 2 0 012 2v18Z"/><path d="M10 14h4"/></svg></div>
-          <div class="mico pu mi6"><svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/></svg></div>
-          <div class="mico am mi7"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14h18V6l-3-4z"/></svg></div>
+          <div class="mico gr mi4"><svg viewBox="0 0 24 24"><path d="M6 22V4a2 2 0 012-2h8a2 2 0 012 2v18Z"/></svg></div>
           <div class="mico pk mi8"><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="3"/><path d="M5 21v-2a4 4 0 014-4h6a4 4 0 014 4v2"/></svg></div>
-          <div class="mico pk mi9"><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="3"/><path d="M5 21v-2a4 4 0 014-4h6a4 4 0 014 4v2"/></svg></div>
           <div class="mico pu mi10"><svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/></svg></div>
-          <div class="mico gr mi11"><svg viewBox="0 0 24 24"><path d="M6 22V4a2 2 0 012-2h8a2 2 0 012 2v18Z"/><path d="M10 14h4"/></svg></div>
+          
         </div>
 
-        <!-- Right map controls -->
-        <div class="mw-ctrls">
+        <div class="mw-ctrls-floating">
           <div class="mc">
             <svg viewBox="0 0 24 24"><polygon points="12,2 22,7 12,12 2,7"/><polyline points="2,17 12,22 22,17"/><polyline points="2,12 12,17 22,12"/></svg>
             Layers
@@ -1436,8 +1494,7 @@ button{font-family:inherit;cursor:pointer}
           <div class="mc"><span class="mc-minus">−</span></div>
         </div>
 
-        <!-- Nearby sidebar -->
-        <div class="mw-sidebar">
+        <div class="mw-overlay-card">
           <div class="ms-hdr">
             <span class="ms-hdr-t">Nearby Opportunities</span>
             <a href="#">View all</a>
@@ -1485,89 +1542,99 @@ button{font-family:inherit;cursor:pointer}
           </div>
         </div>
 
-      </div><!-- /mw-body -->
-    </div><!-- /map-widget -->
-  </div>
+      </div></div></div>
 </section>
 
-<!-- Built for Business Expansion -->
 <div class="biz-bar-outer">
   <div class="biz-bar">
     <div class="bb-title">
       <h4>Built for Business<br>Expansion</h4>
-      <div class="bb-title-line"></div>
       <p>Solutions for every<br>commercial need</p>
     </div>
+    <div class="bb-divider"></div>
     <div class="bb-items">
       <div class="bb-item">
-        <div class="bb-ico indigo"><svg viewBox="0 0 24 24"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 00-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg></div>
+        <div class="bb-ico purple-line"><svg viewBox="0 0 24 24"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 00-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg></div>
         <div><div class="bbn">Restaurant<br>Chains</div><div class="bbd">Find high-footfall<br>retail clusters</div></div>
       </div>
       <div class="bb-item">
-        <div class="bb-ico green"><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+        <div class="bb-ico green-line"><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
         <div><div class="bbn">Logistics<br>Companies</div><div class="bbd">Locate warehouses<br>near corridors</div></div>
       </div>
       <div class="bb-item">
-        <div class="bb-ico indigo"><svg viewBox="0 0 24 24"><path d="M6 22V4a2 2 0 012-2h8a2 2 0 012 2v18Z"/><path d="M6 12H4a2 2 0 00-2 2v6a2 2 0 002 2h2"/><path d="M18 9h2a2 2 0 012 2v9a2 2 0 01-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/></svg></div>
+        <div class="bb-ico blue-line"><svg viewBox="0 0 24 24"><path d="M6 22V4a2 2 0 012-2h8a2 2 0 012 2v18Z"/><path d="M6 12H4a2 2 0 00-2 2v6a2 2 0 002 2h2"/><path d="M18 9h2a2 2 0 012 2v9a2 2 0 01-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/></svg></div>
         <div><div class="bbn">IT / Tech<br>Companies</div><div class="bbd">Find offices near<br>talent hubs</div></div>
       </div>
       <div class="bb-item">
-        <div class="bb-ico amber"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg></div>
+        <div class="bb-ico orange-line"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg></div>
         <div><div class="bbn">Retail<br>Brands</div><div class="bbd">Expand in<br>competitive zones</div></div>
       </div>
       <div class="bb-item">
-        <div class="bb-ico indigo"><svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
+        <div class="bb-ico purple-line"><svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
         <div><div class="bbn">Investors</div><div class="bbd">Identify high-growth<br>commercial pockets</div></div>
       </div>
     </div>
   </div>
 </div>
-<!-- ═══════════════════════════════════════════════
-     SECTION 3  —  ONE BUILDING
-═══════════════════════════════════════════════ -->
+
 <section class="s3">
   <div class="s3-grid">
 
-    <!-- LEFT — Title + Feature card -->
+    <!-- Left Panel -->
     <div class="s3-left">
-      <div>
-        <div class="sec-tag">WHY CREMP</div>
-        <h2 class="sec-h2">One Building.<br>Multiple <span class="gold">Opportunities.</span></h2>
-        <p class="sec-p">Everything you need within the same commercial building ecosystem<br>— discover, connect and grow.</p>
-      </div>
+      <div class="sec-tag">WHY CREMP</div>
+      <h2 class="sec-h2">One Building.<br>Multiple <span class="gold">Opportunities.</span></h2>
+      <p class="sec-p">Everything you need within the same commercial building ecosystem — discover, connect and grow.</p>
 
-      <div class="s3-feats-card">
-        <div class="s3-feats">
-          <div class="s3-feat">
-            <div class="s3-feat-ico"><svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg></div>
-            <div><div class="s3-feat-name">All Opportunities in One Place</div><div class="s3-feat-desc">Spaces, businesses, franchises and brokers in the same building.</div></div>
+      <div class="s3-feats">
+        <div class="s3-feat">
+          <div class="s3-feat-ico">
+            <svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg>
           </div>
-          <div class="s3-feat">
-            <div class="s3-feat-ico green"><svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
-            <div><div class="s3-feat-name">Smart for Investors & Businesses</div><div class="s3-feat-desc">Compare options, evaluate potential and make informed decisions.</div></div>
+          <div>
+            <div class="s3-feat-name">All Opportunities in One Place</div>
+            <div class="s3-feat-desc">Spaces, businesses, franchises and brokers in the same building.</div>
           </div>
-          <div class="s3-feat">
-            <div class="s3-feat-ico amber"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
-            <div><div class="s3-feat-name">Verified & Trusted</div><div class="s3-feat-desc">Quality listings. Verified brokers. Transparent deals.</div></div>
+        </div>
+        <div class="s3-feat">
+          <div class="s3-feat-ico green">
+            <svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
           </div>
-          <div class="s3-feat">
-            <div class="s3-feat-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="18" r="3"/><path d="M9.5 8.5l-2.5 7M14.5 8.5l2.5 7M9 18h6"/></svg></div>
-            <div><div class="s3-feat-name">Complete Ecosystem</div><div class="s3-feat-desc">Properties, businesses, franchises and experts — all connected.</div></div>
+          <div>
+            <div class="s3-feat-name">Smart for Investors &amp; Businesses</div>
+            <div class="s3-feat-desc">Compare options, evaluate potential and make informed decisions.</div>
+          </div>
+        </div>
+        <div class="s3-feat">
+          <div class="s3-feat-ico amber">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+          </div>
+          <div>
+            <div class="s3-feat-name">Verified &amp; Trusted</div>
+            <div class="s3-feat-desc">Quality listings. Verified brokers. Transparent deals.</div>
+          </div>
+        </div>
+        <div class="s3-feat">
+          <div class="s3-feat-ico">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="18" r="3"/><path d="M9.5 8.5l-2.5 7M14.5 8.5l2.5 7M9 18h6"/></svg>
+          </div>
+          <div>
+            <div class="s3-feat-name">Complete Ecosystem</div>
+            <div class="s3-feat-desc">Properties, businesses, franchises and experts — all connected.</div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- RIGHT — Building visualization -->
+    <!-- Right: Building Widget -->
     <div class="bldg-area">
-
       <!-- Address pill -->
       <div class="bldg-addr">
         <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
         Max Towers, Sector 62, Noida
       </div>
 
-      <!-- Floor tag list (left of building) -->
+      <!-- Floor tag list -->
       <div class="floor-list">
         <div class="floor-tag ft-purple">
           <div class="ftag-ico"><svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/></svg></div>
@@ -1595,17 +1662,17 @@ button{font-family:inherit;cursor:pointer}
         </div>
       </div>
 
-      <!-- Building photo with floor banners -->
+      <!-- Building photo -->
       <div class="bldg-photo-wrap">
         <div class="bldg-floor-lbl bfl-1">OFFICE SPACES</div>
         <div class="bldg-floor-lbl bfl-2">RETAIL SPACES</div>
-        <div class="bldg-floor-lbl bfl-3">F&B / RESTAURANTS</div>
+        <div class="bldg-floor-lbl bfl-3">F&amp;B / RESTAURANTS</div>
         <div class="bldg-floor-lbl bfl-4">BUSINESSES</div>
         <div class="bldg-floor-lbl bfl-5">FRANCHISE OPPORTUNITIES</div>
-        <div class="bldg-floor-lbl bfl-6">BROKERS & EXPERTS</div>
+        <div class="bldg-floor-lbl bfl-6">BROKERS &amp; EXPERTS</div>
       </div>
 
-      <!-- Right benefits column -->
+      <!-- Right benefit list -->
       <div class="s3r-list">
         <div class="s3r-item">
           <div class="s3r-ico"><svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg></div>
@@ -1613,7 +1680,7 @@ button{font-family:inherit;cursor:pointer}
         </div>
         <div class="s3r-item">
           <div class="s3r-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M5 21v-2a4 4 0 014-4h6a4 4 0 014 4v2"/></svg></div>
-          <div><div class="s3r-name">Investor & Business<br>Centric</div><div class="s3r-desc">Designed for high returns and growth.</div></div>
+          <div><div class="s3r-name">Investor &amp; Business<br>Centric</div><div class="s3r-desc">Designed for high returns and growth.</div></div>
         </div>
         <div class="s3r-item">
           <div class="s3r-ico"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
@@ -1624,18 +1691,16 @@ button{font-family:inherit;cursor:pointer}
           <div><div class="s3r-name">Connected<br>Ecosystem</div><div class="s3r-desc">Brokers, businesses and franchise partners under one roof.</div></div>
         </div>
       </div>
-
     </div>
+
   </div>
 </section>
 
-<!-- ═══ Built for India bar ═══ -->
 <div class="india-bar">
   <div class="india-l">
     <h3>Built for India.<br>In Your Language.</h3>
     <p>CREMP is designed for every business across India.</p>
   </div>
-
   <div class="india-langs-wrap">
     <div class="india-langs-h">Multi-Language Support</div>
     <div class="india-chips">
@@ -1647,7 +1712,6 @@ button{font-family:inherit;cursor:pointer}
       <div class="ich"><div class="ich-circle more">+ More</div></div>
     </div>
   </div>
-
   <div class="india-feats">
     <div class="if-item">
       <div class="if-ico purple"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
@@ -1668,7 +1732,6 @@ button{font-family:inherit;cursor:pointer}
   </div>
 </div>
 
-<!-- Category bar -->
 <div class="cat-bar-outer">
   <div class="cat-bar">
     <div class="cat">
@@ -1698,11 +1761,7 @@ button{font-family:inherit;cursor:pointer}
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════════════
-     SECTION 4  —  KEY PLAYERS
-═══════════════════════════════════════════════ -->
 <section class="s4">
-
   <div class="s4-hdr">
     <span class="s4-supertag">5 — FOR EVERY COMMERCIAL REAL ESTATE PLAYER</span>
     <h2 class="s4-h2">One Platform. <span class="purple">Built for Key Players.</span></h2>
@@ -1710,8 +1769,6 @@ button{font-family:inherit;cursor:pointer}
   </div>
 
   <div class="players">
-
-    <!-- Franchisors -->
     <div class="pcard">
       <div class="pc-img fr">
         <div class="pc-badge fr">
@@ -1722,16 +1779,15 @@ button{font-family:inherit;cursor:pointer}
         <div class="pc-role fr">FRANCHISORS</div>
         <p class="pc-tagline">Expand your brand to the right locations<br>with the right partners.</p>
         <ul class="pc-list">
-          <li><span class="pc-check fr"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Discover High Potential Locations</li>
-          <li><span class="pc-check fr"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Connect with Verified Brokers</li>
-          <li><span class="pc-check fr"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Scale Faster, Grow Smarter</li>
+          <li><span class="pc-check fr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>Discover High Potential Locations</li>
+          <li><span class="pc-check fr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>Connect with Verified Brokers</li>
+          <li><span class="pc-check fr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>Scale Faster, Grow Smarter</li>
         </ul>
         <div class="pc-divider"></div>
         <a href="#" class="pc-link fr">Explore Franchisor Solutions &nbsp;→</a>
       </div>
     </div>
 
-    <!-- Brokers -->
     <div class="pcard">
       <div class="pc-img br">
         <div class="pc-badge br">
@@ -1742,41 +1798,39 @@ button{font-family:inherit;cursor:pointer}
         <div class="pc-role br">BROKERS</div>
         <p class="pc-tagline">Get quality leads, close more deals<br>and grow your network.</p>
         <ul class="pc-list">
-          <li><span class="pc-check br"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Access Verified Property Requirements</li>
-          <li><span class="pc-check br"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Connect with Serious Buyers & Tenants</li>
-          <li><span class="pc-check br"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Boost Visibility & Conversions</li>
+          <li><span class="pc-check br"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>Access Verified Property Requirements</li>
+          <li><span class="pc-check br"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>Connect with Serious Buyers & Tenants</li>
+          <li><span class="pc-check br"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>Boost Visibility & Conversions</li>
         </ul>
         <div class="pc-divider"></div>
         <a href="#" class="pc-link br">Explore Broker Solutions &nbsp;→</a>
       </div>
     </div>
 
-    <!-- Property Owners -->
     <div class="pcard">
       <div class="pc-img ow">
         <div class="pc-badge ow">
-          <svg viewBox="0 0 24 24"><path d="M6 22V4a2 2 0 012-2h8a2 2 0 012 2v18Z"/><path d="M6 12H4a2 2 0 00-2 2v6a2 2 0 002 2h2"/><path d="M18 9h2a2 2 0 012 2v9a2 2 0 01-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M3 21h18M3 7v1a3 3 0 006 0V7m0 1a3 3 0 006 0V7m0 1a3 3 0 006 0V7M4 21V10m16 11V10"/></svg>
         </div>
       </div>
       <div class="pc-body">
         <div class="pc-role ow">PROPERTY OWNERS</div>
         <p class="pc-tagline">List once and reach the right tenants,<br>buyers and businesses.</p>
         <ul class="pc-list">
-          <li><span class="pc-check ow"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Maximum Exposure to Quality Leads</li>
-          <li><span class="pc-check ow"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Verified Inquiries & Site Visits</li>
-          <li><span class="pc-check ow"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Rent / Sell Faster with Lower Vacancy</li>
+          <li><span class="pc-check ow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>Maximum Exposure to Quality Leads</li>
+          <li><span class="pc-check ow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>Verified Inquiries & Site Visits</li>
+          <li><span class="pc-check ow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>Rent / Sell Faster with Lower Vacancy</li>
         </ul>
         <div class="pc-divider"></div>
         <a href="#" class="pc-link ow">Explore Owner Solutions &nbsp;→</a>
       </div>
     </div>
-
-  </div><!-- /players -->
+  </div>
 
   <div class="looking-wrap">
     <div class="looking">
       <div class="lk-ico-wrap">
-        <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/><line x1="12" y1="12" x2="12" y2="16"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="8" y1="6" x2="16" y2="6"></line><line x1="8" y1="10" x2="16" y2="10"></line><line x1="8" y1="14" x2="16" y2="14"></line><line x1="8" y1="18" x2="16" y2="18"></line></svg>
       </div>
       <div class="lk-t">
         <h4>Looking for something else?</h4>
@@ -1785,16 +1839,10 @@ button{font-family:inherit;cursor:pointer}
       <button class="lk-btn">Explore Other Opportunities &nbsp;→</button>
     </div>
   </div>
-
 </section>
 
-<!-- ═══════════════════════════════════════════════
-     CTA + FOOTER
-═══════════════════════════════════════════════ -->
 <div class="cta-outer">
   <div class="cta-card">
-
-    <!-- CTA -->
     <div class="cta-row">
       <div class="cta-img"></div>
       <div class="cta-copy">
@@ -1819,12 +1867,8 @@ button{font-family:inherit;cursor:pointer}
         </a>
       </div>
     </div>
-
-    <!-- Footer -->
     <div class="footer">
       <div class="f-grid">
-
-        <!-- Brand -->
         <div>
           <div class="f-brand-name">CR≡MP</div>
           <p class="f-tagline">India's trusted platform for commercial real estate.<br>Discover. Connect. Grow.</p>
@@ -1842,8 +1886,6 @@ button{font-family:inherit;cursor:pointer}
             <a class="fsoc" href="#" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.95C5.12 20 12 20 12 20s6.88 0 8.59-.47a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#fff" stroke="none"/></svg></a>
           </div>
         </div>
-
-        <!-- Explore -->
         <div>
           <div class="f-col-h">Explore</div>
           <ul class="f-links">
@@ -1855,8 +1897,6 @@ button{font-family:inherit;cursor:pointer}
             <li><a href="#">Brokers & Experts</a></li>
           </ul>
         </div>
-
-        <!-- For Every Player -->
         <div>
           <div class="f-col-h">For Every Player</div>
           <ul class="f-links">
@@ -1868,8 +1908,6 @@ button{font-family:inherit;cursor:pointer}
             <li><a href="#" class="sub">– Landlords</a></li>
           </ul>
         </div>
-
-        <!-- Company -->
         <div>
           <div class="f-col-h">Company</div>
           <ul class="f-links">
@@ -1881,16 +1919,12 @@ button{font-family:inherit;cursor:pointer}
             <li><a href="#">Contact Us</a></li>
           </ul>
         </div>
-
-        <!-- Stay Updated -->
         <div>
           <div class="fnl-h">Stay Updated</div>
           <p class="fnl-p">Get the latest commercial real estate opportunities and insights delivered to your inbox.</p>
           <div class="nl-wrap">
             <input type="email" placeholder="Enter your email">
-            <button aria-label="Subscribe">
-              <svg class="nl-btn-svg" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </button>
+            <button aria-label="Subscribe"><svg class="nl-btn-svg" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
           </div>
           <div class="f-trust">
             <div class="ft">
@@ -1903,24 +1937,17 @@ button{font-family:inherit;cursor:pointer}
             </div>
           </div>
         </div>
-
-      </div><!-- /f-grid -->
-
+      </div>
       <div class="f-bottom">
         <div class="f-copy"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>&nbsp; © 2024 CREMP. All rights reserved.</div>
         <div class="f-legal">
-          <a href="#">Privacy Policy</a>
-          <span class="f-sep">|</span>
-          <a href="#">Terms of Use</a>
-          <span class="f-sep">|</span>
-          <a href="#">Cookie Policy</a>
+          <a href="#">Privacy Policy</a><span class="f-sep">|</span><a href="#">Terms of Use</a><span class="f-sep">|</span><a href="#">Cookie Policy</a>
         </div>
         <div class="f-made">Made in India &nbsp;🇮🇳</div>
       </div>
-
-    </div><!-- /footer -->
-  </div><!-- /cta-card -->
-</div><!-- /cta-outer -->
+    </div>
+  </div>
+</div>
 
 </body>
 </html>
