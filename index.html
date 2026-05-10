@@ -6,6 +6,9 @@
 <title>CREMP – A Commercial RE Marketplace</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
+/* ═══════════════════════════════════════════════
+   GLOBAL & VARIABLES
+═══════════════════════════════════════════════ */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:'Poppins',sans-serif;background:#fff;color:#0D1733;overflow-x:hidden;line-height:1}
@@ -34,7 +37,6 @@ button{font-family:inherit;cursor:pointer}
 ::-webkit-scrollbar-track{background:#0B1628}
 ::-webkit-scrollbar-thumb{background:#D4961A;border-radius:3px}
 
-/* Global Helpers */
 .sec-tag{
   display:flex;align-items:center;gap:8px;
   font-size:11px;font-weight:700;letter-spacing:1px;
@@ -94,7 +96,7 @@ button{font-family:inherit;cursor:pointer}
 .nav-login:hover{border-color:var(--c-gold);color:var(--c-gold)}
 
 /* ═══════════════════════════════════════════════
-   SECTION 1 — HERO & QUICK ACTIONS
+   SECTION 1
 ═══════════════════════════════════════════════ */
 .hero{
   background:#0B1628;
@@ -300,7 +302,7 @@ button{font-family:inherit;cursor:pointer}
 
 
 /* ═══════════════════════════════════════════════
-   SECTION 2 — PRECISION MAP SEARCH
+   SECTION 2
 ═══════════════════════════════════════════════ */
 .s2 { background: #fff; padding: 60px 60px 0; }
 .s2-inner { display: grid; grid-template-columns: 400px 1fr; gap: 40px; align-items: stretch; }
@@ -490,68 +492,203 @@ button{font-family:inherit;cursor:pointer}
 
 
 /* ═══════════════════════════════════════════════
-   SECTION 3 — ONE BUILDING & CATEGORIES
+   SECTION 3
 ═══════════════════════════════════════════════ */
-.s3{background:#fff;padding:56px 60px 0}
-.s3-grid{display:grid;grid-template-columns:360px 1fr;gap:48px;align-items:start;position:relative;}
+.s3 {
+  background: #fff;
+  padding: 80px 60px 40px;
+  font-family: 'Poppins', sans-serif;
+}
 
-.s3-left{display:flex;flex-direction:column;gap:20px}
-.s3-left .sec-h2{font-size:50px;font-weight:800;line-height:1.05;margin-bottom:14px;color:#0F172A;letter-spacing:-.8px}
-.s3-left .sec-h2 .gold{color:var(--c-gold)}
-.s3-left .sec-p{font-size:14px;color:#64748B;line-height:1.7;margin-bottom:0;max-width:none}
+.s3-grid {
+  display: flex;
+  gap: 40px;
+  align-items: stretch;
+}
 
-.s3-feats-card{background:transparent;border:none;padding:0;border-radius:0}
-.s3-feats{display:flex;flex-direction:column;gap:16px}
-.s3-feat{display:flex;align-items:flex-start;gap:14px}
-.s3-feat-ico{width:44px;height:44px;border-radius:10px;background:rgba(85,72,217,.09);display:grid;place-items:center;flex-shrink:0;}
-.s3-feat-ico svg{width:22px;height:22px;stroke:var(--c-purple);fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
-.s3-feat-ico.green{background:rgba(22,163,74,.09)}
-.s3-feat-ico.green svg{stroke:var(--c-green)}
-.s3-feat-ico.amber{background:rgba(212,150,26,.1)}
-.s3-feat-ico.amber svg{stroke:var(--c-gold)}
-.s3-feat-name{font-size:14px;font-weight:700;color:#0F172A;margin-bottom:4px;line-height:1.3}
-.s3-feat-desc{font-size:12.5px;font-weight:400;color:#64748B;line-height:1.6}
+.s3-left {
+  width: 380px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+}
 
-.bldg-area{position:relative;display:grid;grid-template-columns:172px 1fr 180px;gap:20px;align-items:start;padding-top:0;}
-.bldg-addr{position:absolute;top:0;left:50%;transform:translateX(-50%);background:#0B1628;color:#fff;padding:13px 24px;border-radius:12px;display:inline-flex;align-items:center;gap:10px;font-size:14px;font-weight:700;box-shadow:0 8px 28px rgba(11,22,40,.28);z-index:10;white-space:nowrap;}
-.bldg-addr svg{width:16px;height:16px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.s3-left .sec-tag { margin-bottom: 16px; }
+.s3-left .sec-h2 { font-size: 42px; font-weight: 800; line-height: 1.15; margin-bottom: 16px; letter-spacing: -0.5px; color: #0D1733; }
+.s3-left .sec-h2 .gold { color: #E8AA22; }
+.s3-left .sec-p { font-size: 14px; color: #6B7491; line-height: 1.6; margin-bottom: 32px; }
 
-.bldg-photo-wrap{position:relative;border-radius:16px;overflow:hidden;height:540px;box-shadow:0 20px 60px rgba(0,0,0,.18),0 4px 16px rgba(0,0,0,.08);background:url('./Section3/section3.png') center / cover no-repeat;margin-top:54px;}
-.bldg-photo-wrap::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 55%,rgba(11,22,40,.35) 100%);pointer-events:none;}
+.s3-feats-card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 12px 36px rgba(0,0,0,0.06);
+  padding: 32px 28px;
+  border: 1px solid #F0F2F5;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
 
-.bldg-floor-lbl{position:absolute;padding:6px 14px;border-radius:6px;color:#fff;font-size:10.5px;font-weight:800;letter-spacing:.7px;text-transform:uppercase;box-shadow:0 4px 14px rgba(0,0,0,.3);z-index:3;white-space:nowrap;right:12%;}
-.bfl-1{background:#7E5BEF;top:9%}
-.bfl-2{background:#16A34A;top:26%}
-.bfl-3{background:#EA6C0A;top:43%}
-.bfl-4{background:#3B82F6;top:57%}
-.bfl-5{background:#D97706;top:71%}
-.bfl-6{background:#8B5CF6;top:85%}
+.s3-feat { display: flex; align-items: flex-start; gap: 16px; }
+.s3-feat-ico {
+  width: 44px; height: 44px; border-radius: 50%;
+  display: grid; place-items: center; flex-shrink: 0;
+}
+.s3-feat-ico svg { width: 22px; height: 22px; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 
-.floor-list{display:flex;flex-direction:column;gap:12px;padding-top:54px;position:relative;z-index:5}
-.floor-tag{background:#fff;border:1.5px solid #E2E8F0;border-radius:12px;padding:10px 13px;display:flex;align-items:center;gap:10px;box-shadow:0 4px 18px rgba(0,0,0,.07);cursor:pointer;transition:all .2s;position:relative;}
-.floor-tag:hover{transform:translateX(3px);box-shadow:0 8px 24px rgba(0,0,0,.11)}
-.floor-tag::after{content:'';position:absolute;left:100%;top:50%;transform:translateY(-50%);width:24px;height:1.5px;background-image:repeating-linear-gradient(90deg,currentColor 0,currentColor 4px,transparent 4px,transparent 8px);opacity:.5;}
-.floor-tag::before{content:'';position:absolute;left:calc(100% + 22px);top:50%;transform:translateY(-50%);width:6px;height:6px;border-radius:50%;background:currentColor;opacity:.7;}
+.s3-feat-ico.f-purple { background: #F4F3FD; stroke: #5548D9; }
+.s3-feat-ico.f-green { background: #F0FDF4; stroke: #16A34A; }
+.s3-feat-ico.f-amber { background: #FFFBEB; stroke: #D97706; }
+.s3-feat-ico.f-blue { background: #EFF6FF; stroke: #2563EB; }
 
-.ftag-ico{width:34px;height:34px;border-radius:8px;display:grid;place-items:center;flex-shrink:0;}
-.ftag-ico svg{width:17px;height:17px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.ft-purple{color:#7E5BEF}.ft-purple .ftag-ico{background:#7E5BEF}
-.ft-green {color:#16A34A}.ft-green  .ftag-ico{background:#16A34A}
-.ft-orange{color:#EA6C0A}.ft-orange .ftag-ico{background:#EA6C0A}
-.ft-blue  {color:#3B82F6}.ft-blue   .ftag-ico{background:#3B82F6}
-.ft-amber {color:#D97706}.ft-amber  .ftag-ico{background:#D97706}
-.ft-violet{color:#7C3AED}.ft-violet .ftag-ico{background:#7C3AED}
+.s3-feat-name { font-size: 13.5px; font-weight: 700; color: #0D1733; margin-bottom: 4px; line-height: 1.3; }
+.s3-feat-desc { font-size: 12px; color: #6B7491; line-height: 1.55; }
 
-.ftag-text{display:flex;flex-direction:column;gap:2px}
-.ftag-name{font-size:12.5px;font-weight:700;color:#0F172A;line-height:1.2}
-.ftag-cnt{font-size:10.5px;color:#64748B}
 
-.s3r-list{display:flex;flex-direction:column;gap:22px;padding-top:54px}
-.s3r-item{display:flex;align-items:flex-start;gap:12px}
-.s3r-ico{width:42px;height:42px;border-radius:50%;background:#0B1628;display:grid;place-items:center;flex-shrink:0;}
-.s3r-ico svg{width:20px;height:20px;stroke:#fff;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.s3r-name{font-size:13px;font-weight:800;color:#0F172A;margin-bottom:4px;line-height:1.3}
-.s3r-desc{font-size:11.5px;color:#64748B;line-height:1.6}
+.s3-visual-area {
+  flex: 1;
+  border-radius: 24px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.06);
+  background: url('./Section3/section3.png') center bottom / cover no-repeat;
+  background-color: #E8EEF5;
+  min-height: 640px;
+}
+
+.bldg-addr-pill {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  background: #0B1628;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13.5px;
+  font-weight: 600;
+  box-shadow: 0 8px 24px rgba(11,22,40,0.3);
+  z-index: 10;
+}
+.bldg-addr-pill svg { width: 16px; height: 16px; stroke: #fff; fill: none; stroke-width: 2; }
+
+
+.s3-left-tags {
+  position: absolute;
+  top: 100px;
+  left: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 10;
+}
+
+.floor-tag {
+  background: #fff;
+  border-radius: 12px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 190px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  position: relative;
+  border: 1px solid #F0F2F5;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.floor-tag:hover { transform: translateX(4px); }
+
+.s3-line {
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60px;
+  border-bottom: 2px dotted;
+  opacity: 0.6;
+  z-index: 1;
+}
+.s3-line::after {
+  content: '';
+  position: absolute;
+  right: -3px;
+  top: -3px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.floor-tag.t-purple .ftag-ico { background: #5548D9; }
+.floor-tag.t-purple .s3-line { color: #5548D9; border-color: #5548D9; }
+.floor-tag.t-green .ftag-ico { background: #16A34A; }
+.floor-tag.t-green .s3-line { color: #16A34A; border-color: #16A34A; }
+.floor-tag.t-orange .ftag-ico { background: #F27052; }
+.floor-tag.t-orange .s3-line { color: #F27052; border-color: #F27052; }
+.floor-tag.t-blue .ftag-ico { background: #2563EB; }
+.floor-tag.t-blue .s3-line { color: #2563EB; border-color: #2563EB; }
+.floor-tag.t-amber .ftag-ico { background: #E8AA22; }
+.floor-tag.t-amber .s3-line { color: #E8AA22; border-color: #E8AA22; }
+.floor-tag.t-violet .ftag-ico { background: #8B5CF6; }
+.floor-tag.t-violet .s3-line { color: #8B5CF6; border-color: #8B5CF6; }
+
+.ftag-ico { width: 36px; height: 36px; border-radius: 8px; display: grid; place-items: center; flex-shrink: 0; }
+.ftag-ico svg { width: 18px; height: 18px; stroke: #fff; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+.ftag-text { display: flex; flex-direction: column; gap: 2px; }
+.ftag-name { font-size: 12px; font-weight: 700; color: #0D1733; line-height: 1.2; }
+.ftag-cnt { font-size: 10px; color: #6B7491; }
+
+
+.s3-bldg-labels {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+}
+.bldg-lbl {
+  position: absolute;
+  padding: 6px 12px;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transform: skewY(-6deg);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+.bl-purple { background: #5548D9; top: 18%; left: 54%; }
+.bl-green  { background: #16A34A; top: 31%; left: 52%; }
+.bl-orange { background: #F27052; top: 43%; left: 50%; }
+.bl-blue   { background: #2563EB; top: 56%; left: 48%; }
+.bl-amber  { background: #E8AA22; top: 68%; left: 46%; }
+.bl-violet { background: #8B5CF6; top: 81%; left: 44%; transform: skewY(0deg); border-radius: 8px; }
+
+
+.s3-right-feats {
+  position: absolute;
+  top: 100px;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 230px;
+  z-index: 10;
+}
+.s3-rf-item { display: flex; align-items: flex-start; gap: 14px; }
+.s3-rf-ico {
+  width: 46px; height: 46px; border-radius: 50%;
+  background: #0B1628; display: grid; place-items: center; flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(11,22,40,0.3);
+}
+.s3-rf-ico svg { width: 20px; height: 20px; stroke: #fff; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.s3-rf-text { display: flex; flex-direction: column; gap: 4px; }
+.s3-rf-name { font-size: 13px; font-weight: 800; color: #0D1733; line-height: 1.3; }
+.s3-rf-desc { font-size: 11px; color: #3A4566; line-height: 1.5; font-weight: 500;}
 
 /* India Bar */
 .india-bar{margin:40px 60px 0;background:#FAFAFD;border:1px solid #E2E8F0;border-radius:20px;padding:28px 36px;display:grid;grid-template-columns:auto auto 1fr;gap:48px;align-items:center;}
@@ -564,7 +701,6 @@ button{font-family:inherit;cursor:pointer}
 .ich{display:flex;flex-direction:column;align-items:center;gap:7px;cursor:pointer}
 .ich-circle{min-width:52px;height:52px;padding:0 12px;border-radius:100px;display:grid;place-items:center;font-size:14px;font-weight:700;white-space:nowrap;}
 
-/* Specific Colors for language chips as per image */
 .ich-circle.en  {background:rgba(85,72,217,.1);color:#5548D9;}
 .ich-circle.hi  {background:rgba(22,163,74,.1);color:#16A34A;}
 .ich-circle.te  {background:rgba(234,67,53,.1);color:#EA4335;}
@@ -596,7 +732,7 @@ button{font-family:inherit;cursor:pointer}
 
 
 /* ═══════════════════════════════════════════════
-   SECTION 4 — KEY PLAYERS
+   SECTION 4
 ═══════════════════════════════════════════════ */
 .s4 { background: #F8FAFF; padding: 80px 60px; font-family: 'Poppins', sans-serif; }
 .s4-hdr { text-align: center; margin-bottom: 50px; }
@@ -641,7 +777,6 @@ button{font-family:inherit;cursor:pointer}
 .pc-check { width: 22px; height: 22px; display: grid; place-items: center; flex-shrink: 0; color: currentColor; }
 .pc-check svg { width: 22px; height: 22px; }
 
-/* Dynamic filled circle checkmark based on column color */
 .pc-check.fr { color: #5548D9; }
 .pc-check.br { color: #F27052; }
 .pc-check.ow { color: #16A34A; }
@@ -666,7 +801,7 @@ button{font-family:inherit;cursor:pointer}
 
 
 /* ═══════════════════════════════════════════════
-   SECTION 5 — CTA & FOOTER
+   SECTION 5
 ═══════════════════════════════════════════════ */
 .cta-outer{background:var(--c-footer);padding:0;}
 .cta-card{background:var(--c-footer);border-radius:0;overflow:hidden;}
@@ -711,11 +846,9 @@ button{font-family:inherit;cursor:pointer}
 .cb-sub{font-size:11.5px;color:rgba(255,255,255,.45);margin-top:2px}
 .cb-arr{margin-left:auto;color:rgba(255,255,255,.38);font-size:16px;font-weight:300}
 
-/* Footer layout */
 .footer{padding:48px 60px 0; background:var(--c-footer)}
 .f-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:48px;}
 
-/* Stylized Logo for Footer */
 .f-brand-logo {
   display: flex; align-items: center; gap: 4px;
   font-size: 28px; font-weight: 900; color: #fff; letter-spacing: 1px; margin-bottom: 16px;
@@ -793,12 +926,16 @@ button{font-family:inherit;cursor:pointer}
 .f-made{font-size:12px;color:rgba(255,255,255,.45);display:flex;align-items:center;gap:8px}
 
 /* ═══════════════════════════════════════════════
-   MEDIA QUERIES (ANIMATIONS & RESPONSIVE)
+   MEDIA QUERIES
 ═══════════════════════════════════════════════ */
 @media(max-width:1120px){
   .hero{grid-template-columns:1fr}
   .hero-right{display:none}
-  .s2-inner,.s3-inner{grid-template-columns:1fr}
+  .s2-inner,.s3-grid{flex-direction: column; grid-template-columns:1fr}
+  .s3-left { width: 100%; }
+  .s3-visual-area { width: 100%; min-height: 800px; }
+  .s3-right-feats { display: none; }
+  .s3-line { display: none; }
   .f-grid{grid-template-columns:1fr 1fr}
 }
 @media (max-width: 1024px) {
@@ -1247,95 +1384,132 @@ button{font-family:inherit;cursor:pointer}
 
 <section class="s3">
   <div class="s3-grid">
+
     <div class="s3-left">
-      <div>
-        <div class="sec-tag">WHY CREMP</div>
-        <h2 class="sec-h2">One Building.<br>Multiple <span class="gold">Opportunities.</span></h2>
-        <p class="sec-p">Everything you need within the same commercial building ecosystem<br>— discover, connect and grow.</p>
-      </div>
+      <div class="sec-tag">WHY CREMP</div>
+      <h2 class="sec-h2">One Building.<br>Multiple <span class="gold">Opportunities.</span></h2>
+      <p class="sec-p">Everything you need within the same commercial building ecosystem<br>— discover, connect and grow.</p>
 
       <div class="s3-feats-card">
-        <div class="s3-feats">
-          <div class="s3-feat">
-            <div class="s3-feat-ico"><svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg></div>
-            <div><div class="s3-feat-name">All Opportunities in One Place</div><div class="s3-feat-desc">Spaces, businesses, franchises and brokers in the same building.</div></div>
+        <div class="s3-feat">
+          <div class="s3-feat-ico f-purple">
+            <svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg>
           </div>
-          <div class="s3-feat">
-            <div class="s3-feat-ico green"><svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
-            <div><div class="s3-feat-name">Smart for Investors & Businesses</div><div class="s3-feat-desc">Compare options, evaluate potential and make informed decisions.</div></div>
+          <div>
+            <div class="s3-feat-name">All Opportunities in One Place</div>
+            <div class="s3-feat-desc">Spaces, businesses, franchises and brokers in the same building.</div>
           </div>
-          <div class="s3-feat">
-            <div class="s3-feat-ico amber"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
-            <div><div class="s3-feat-name">Verified & Trusted</div><div class="s3-feat-desc">Quality listings. Verified brokers. Transparent deals.</div></div>
+        </div>
+        <div class="s3-feat">
+          <div class="s3-feat-ico f-green">
+            <svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
           </div>
-          <div class="s3-feat">
-            <div class="s3-feat-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="18" r="3"/><path d="M9.5 8.5l-2.5 7M14.5 8.5l2.5 7M9 18h6"/></svg></div>
-            <div><div class="s3-feat-name">Complete Ecosystem</div><div class="s3-feat-desc">Properties, businesses, franchises and experts — all connected.</div></div>
+          <div>
+            <div class="s3-feat-name">Smart for Investors & Businesses</div>
+            <div class="s3-feat-desc">Compare options, evaluate potential and make informed decisions.</div>
+          </div>
+        </div>
+        <div class="s3-feat">
+          <div class="s3-feat-ico f-amber">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+          </div>
+          <div>
+            <div class="s3-feat-name">Verified & Trusted</div>
+            <div class="s3-feat-desc">Quality listings. Verified brokers. Transparent deals.</div>
+          </div>
+        </div>
+        <div class="s3-feat">
+          <div class="s3-feat-ico f-blue">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="18" r="3"/><path d="M9.5 8.5l-2.5 7M14.5 8.5l2.5 7M9 18h6"/></svg>
+          </div>
+          <div>
+            <div class="s3-feat-name">Complete Ecosystem</div>
+            <div class="s3-feat-desc">Properties, businesses, franchises and experts — all connected.</div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="bldg-area">
-      <div class="bldg-addr">
+    <div class="s3-visual-area">
+      
+      <div class="bldg-addr-pill">
         <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
         Max Towers, Sector 62, Noida
       </div>
 
-      <div class="floor-list">
-        <div class="floor-tag ft-purple">
+      <div class="s3-left-tags">
+        <div class="floor-tag t-purple">
           <div class="ftag-ico"><svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/></svg></div>
           <div class="ftag-text"><div class="ftag-name">Office Spaces</div><div class="ftag-cnt">24 Available</div></div>
+          <div class="s3-line"></div>
         </div>
-        <div class="floor-tag ft-green">
+        <div class="floor-tag t-green">
           <div class="ftag-ico"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg></div>
           <div class="ftag-text"><div class="ftag-name">Retail Spaces</div><div class="ftag-cnt">18 Available</div></div>
+          <div class="s3-line" style="width: 80px;"></div>
         </div>
-        <div class="floor-tag ft-orange">
+        <div class="floor-tag t-orange">
           <div class="ftag-ico"><svg viewBox="0 0 24 24"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 00-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg></div>
           <div class="ftag-text"><div class="ftag-name">F&amp;B / Restaurants</div><div class="ftag-cnt">07 Available</div></div>
+          <div class="s3-line" style="width: 100px;"></div>
         </div>
-        <div class="floor-tag ft-blue">
+        <div class="floor-tag t-blue">
           <div class="ftag-ico"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg></div>
           <div class="ftag-text"><div class="ftag-name">Businesses</div><div class="ftag-cnt">12 Available</div></div>
+          <div class="s3-line" style="width: 110px;"></div>
         </div>
-        <div class="floor-tag ft-amber">
-          <div class="ftag-ico"><svg viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 010-5H6"/><path d="M18 9h1.5a2.5 2.5 0 000-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0012 0V2z"/></svg></div>
+        <div class="floor-tag t-amber">
+          <div class="ftag-ico"><svg viewBox="0 0 24 24"><path d="M9 11l-3 3 4 4L21 7l-3-3-2 2-2-2-2 2-2-2-2 2"/></svg></div>
           <div class="ftag-text"><div class="ftag-name">Franchise Opp.</div><div class="ftag-cnt">06 Available</div></div>
+          <div class="s3-line" style="width: 120px;"></div>
         </div>
-        <div class="floor-tag ft-violet">
+        <div class="floor-tag t-violet">
           <div class="ftag-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M5 21v-2a4 4 0 014-4h6a4 4 0 014 4v2"/></svg></div>
           <div class="ftag-text"><div class="ftag-name">Brokers in Building</div><div class="ftag-cnt">05 Available</div></div>
+          <div class="s3-line" style="width: 110px; top: 10px;"></div>
         </div>
       </div>
 
-      <div class="bldg-photo-wrap">
-        <div class="bldg-floor-lbl bfl-1">OFFICE SPACES</div>
-        <div class="bldg-floor-lbl bfl-2">RETAIL SPACES</div>
-        <div class="bldg-floor-lbl bfl-3">F&B / RESTAURANTS</div>
-        <div class="bldg-floor-lbl bfl-4">BUSINESSES</div>
-        <div class="bldg-floor-lbl bfl-5">FRANCHISE OPPORTUNITIES</div>
-        <div class="bldg-floor-lbl bfl-6">BROKERS & EXPERTS</div>
+      <div class="s3-bldg-labels">
+        <div class="bldg-lbl bl-purple">OFFICE SPACES</div>
+        <div class="bldg-lbl bl-green">RETAIL SPACES</div>
+        <div class="bldg-lbl bl-orange">F&B / RESTAURANTS</div>
+        <div class="bldg-lbl bl-blue">BUSINESSES</div>
+        <div class="bldg-lbl bl-amber">FRANCHISE OPPORTUNITIES</div>
+        <div class="bldg-lbl bl-violet">BROKERS & EXPERTS</div>
       </div>
 
-      <div class="s3r-list">
-        <div class="s3r-item">
-          <div class="s3r-ico"><svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg></div>
-          <div><div class="s3r-name">Building-Level<br>Visibility</div><div class="s3r-desc">Explore every opportunity inside the building.</div></div>
+      <div class="s3-right-feats">
+        <div class="s3-rf-item">
+          <div class="s3-rf-ico"><svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg></div>
+          <div class="s3-rf-text">
+            <div class="s3-rf-name">Building-Level<br>Visibility</div>
+            <div class="s3-rf-desc">Explore every opportunity inside the building.</div>
+          </div>
         </div>
-        <div class="s3r-item">
-          <div class="s3r-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M5 21v-2a4 4 0 014-4h6a4 4 0 014 4v2"/></svg></div>
-          <div><div class="s3r-name">Investor & Business<br>Centric</div><div class="s3r-desc">Designed for high returns and growth.</div></div>
+        <div class="s3-rf-item">
+          <div class="s3-rf-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M5 21v-2a4 4 0 014-4h6a4 4 0 014 4v2"/></svg></div>
+          <div class="s3-rf-text">
+            <div class="s3-rf-name">Investor & Business<br>Centric</div>
+            <div class="s3-rf-desc">Designed for high returns and growth.</div>
+          </div>
         </div>
-        <div class="s3r-item">
-          <div class="s3r-ico"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
-          <div><div class="s3r-name">Better Returns,<br>Better Opportunities</div><div class="s3r-desc">High-potential assets in the right locations.</div></div>
+        <div class="s3-rf-item">
+          <div class="s3-rf-ico"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
+          <div class="s3-rf-text">
+            <div class="s3-rf-name">Better Returns,<br>Better Opportunities</div>
+            <div class="s3-rf-desc">High-potential assets in the right locations.</div>
+          </div>
         </div>
-        <div class="s3r-item">
-          <div class="s3r-ico"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.74"/></svg></div>
-          <div><div class="s3r-name">Connected<br>Ecosystem</div><div class="s3r-desc">Brokers, businesses and franchise partners under one roof.</div></div>
+        <div class="s3-rf-item">
+          <div class="s3-rf-ico"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.74"/></svg></div>
+          <div class="s3-rf-text">
+            <div class="s3-rf-name">Connected<br>Ecosystem</div>
+            <div class="s3-rf-desc">Brokers, businesses and franchise partners under one roof.</div>
+          </div>
         </div>
       </div>
+
     </div>
   </div>
 </section>
