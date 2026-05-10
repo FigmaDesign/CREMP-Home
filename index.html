@@ -3035,6 +3035,44 @@
       .cat:not(:last-child)::after {
         display: none;
       }
+
+      .india-bar {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        text-align: center;
+      }
+
+      .india-feats {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .india-chips {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .biz-bar {
+        flex-direction: column;
+        gap: 24px;
+        text-align: center;
+      }
+
+      .bb-divider {
+        display: none;
+      }
+
+      .bb-items {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 24px;
+      }
+
+      .bb-item {
+        flex-direction: column;
+        align-items: center;
+        min-width: 140px;
+      }
     }
 
     @media(max-width:768px) {
@@ -3073,6 +3111,15 @@
       .s3,
       .s4 {
         padding: 56px 20px
+      }
+
+      .india-bar {
+        margin: 40px 20px 0;
+        padding: 24px 20px;
+      }
+
+      .biz-bar-outer {
+        padding: 24px 20px 40px;
       }
 
       .cat-bar {
