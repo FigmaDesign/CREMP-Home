@@ -1441,9 +1441,13 @@
     }
 
     .ms-dist svg {
-      width: 10px;
-      height: 10px;
-      fill: #6B7491;
+      width: 12px;
+      height: 12px;
+      stroke: #6B7491;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
 
     .ms-bk svg {
@@ -2650,35 +2654,39 @@
       margin-bottom: 48px;
     }
 
-    .f-brand-logo {
+    .f-branding {
       display: flex;
       align-items: center;
-      gap: 4px;
-      font-size: 28px;
-      font-weight: 900;
-      color: #fff;
-      letter-spacing: 1px;
-      margin-bottom: 16px;
+      gap: 18px;
+      margin-bottom: 24px;
     }
 
-    .logo-bars {
+    .f-logo-img {
+      height: 58px;
+      width: auto;
+      display: block;
+    }
+
+    .f-logo-copy {
       display: flex;
       flex-direction: column;
-      gap: 4px;
-      margin: 0 2px;
+      justify-content: center;
     }
 
-    .logo-bars i {
-      display: block;
-      width: 16px;
-      height: 3px;
-      background: #fff;
-      border-radius: 2px;
+    .f-logo-name {
+      font-size: 38px;
+      font-weight: 900;
+      color: #fff;
+      line-height: 1;
+      letter-spacing: 1px;
     }
 
-    .logo-bars i:nth-child(2) {
-      background: #5548D9;
-      width: 12px;
+    .f-logo-tagline {
+      font-size: 15px;
+      font-weight: 500;
+      color: rgba(255, 255, 255, .5);
+      margin-top: 6px;
+      letter-spacing: 0.3px;
     }
 
     .f-tagline {
@@ -4010,13 +4018,9 @@
         </div>
 
         <button class="btn-purple">
-          <svg viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="10" />
-            <circle cx="12" cy="12" r="3" />
-            <line x1="12" y1="2" x2="12" y2="5" />
-            <line x1="12" y1="19" x2="12" y2="22" />
-            <line x1="2" y1="12" x2="5" y2="12" />
-            <line x1="19" y1="12" x2="22" y2="12" />
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
           </svg>
           Explore Commercial Clusters &nbsp;→
         </button>
@@ -4194,8 +4198,8 @@
                   <div class="ms-name">Grade A Office Space</div>
                   <div class="ms-city">Hitech City, Hyderabad</div>
                   <div class="ms-dist"><svg viewBox="0 0 24 24">
-                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
-                      <circle cx="12" cy="10" r="3" />
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
                     </svg>0.8 km away</div>
                 </div>
                 <div class="ms-bk"><svg viewBox="0 0 24 24">
@@ -4208,8 +4212,8 @@
                   <div class="ms-name">Retail Shop for Lease</div>
                   <div class="ms-city">Madhapur, Hyderabad</div>
                   <div class="ms-dist"><svg viewBox="0 0 24 24">
-                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
-                      <circle cx="12" cy="10" r="3" />
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
                     </svg>1.1 km away</div>
                 </div>
                 <div class="ms-bk"><svg viewBox="0 0 24 24">
@@ -4222,8 +4226,8 @@
                   <div class="ms-name">Franchise Opportunity</div>
                   <div class="ms-city">Banjara Hills, Hyderabad</div>
                   <div class="ms-dist"><svg viewBox="0 0 24 24">
-                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
-                      <circle cx="12" cy="10" r="3" />
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
                     </svg>1.3 km away</div>
                 </div>
                 <div class="ms-bk"><svg viewBox="0 0 24 24">
@@ -4236,8 +4240,8 @@
                   <div class="ms-name">Warehouse Space</div>
                   <div class="ms-city">Kothaguda, Hyderabad</div>
                   <div class="ms-dist"><svg viewBox="0 0 24 24">
-                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
-                      <circle cx="12" cy="10" r="3" />
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
                     </svg>1.6 km away</div>
                 </div>
                 <div class="ms-bk"><svg viewBox="0 0 24 24">
@@ -4564,8 +4568,8 @@
     <div class="india-feats">
       <div class="if-item">
         <div class="if-ico purple"><svg viewBox="0 0 24 24">
-            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
-            <circle cx="12" cy="10" r="3" />
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
           </svg></div>
         <div class="if-name">Pan India<br>Coverage</div>
       </div>
@@ -4862,13 +4866,19 @@
       <div class="footer">
         <div class="f-grid">
           <div>
-            <div class="f-brand-logo">CR<span class="logo-bars"><i></i><i></i><i></i></span>MP</div>
+            <div class="f-branding">
+              <img src="./Logo/Logo.png" alt="CREMP Logo" class="f-logo-img">
+              <div class="f-logo-copy">
+                <span class="f-logo-name">CREMP</span>
+                <span class="f-logo-tagline">A Commercial RE Marketplace</span>
+              </div>
+            </div>
             <p class="f-tagline">India's trusted platform for commercial real estate.<br>Discover. Connect. Grow.</p>
             <div class="f-hr"></div>
             <div class="f-contacts">
               <div class="f-ci"><span class="f-ci-ico"><svg viewBox="0 0 24 24">
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
-                    <circle cx="12" cy="10" r="3" />
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
                   </svg></span><span>Max Towers, Sector 62,<br>Noida, Uttar Pradesh 201309</span></div>
               <div class="f-ci"><span class="f-ci-ico"><svg viewBox="0 0 24 24">
                     <path
